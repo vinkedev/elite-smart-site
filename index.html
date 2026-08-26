@@ -22,6 +22,9 @@
             --light: #f8f9fa;
             --gray: #6c757d;
             --white: #ffffff;
+            --success: #28a745;
+            --danger: #dc3545;
+            --warning: #ffc107;
             --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
             --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.12);
             --radius: 16px;
@@ -863,7 +866,7 @@
             .section { padding: 60px 0; }
 
             .product-grid {
-                grid-template-columns: 1fr !important; /* ← 1 colonne sur mobile */
+                grid-template-columns: 1fr !important;
                 gap: 24px;
             }
             .product-image { height: 280px; padding: 15px; }
@@ -1202,7 +1205,7 @@
             });
         });
 
-        // ===== INTERSECTION OBSERVER (pour sections + cartes) =====
+        // ===== INTERSECTION OBSERVER (pour sections seulement) =====
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1210,6 +1213,8 @@
                 }
             });
         }, { root: null, rootMargin: '-30px 0px -60px 0px', threshold: 0.1 });
+
+        document.querySelectorAll('.section, .why-card').forEach(el => observer.observe(el));
 
         // ===== NOTIFICATION =====
         function showNotification(message, type = 'success') {
@@ -1284,7 +1289,7 @@
             `;
         }
 
-        // ===== AFFICHAGE =====
+        // ===== AFFICHAGE AVEC FORCE D'AFFICHAGE IMMÉDIAT =====
         function renderProducts() {
             const watchesGrid = document.getElementById('desktop-watches');
             const accessoriesGrid = document.getElementById('desktop-accessories');
@@ -1292,8 +1297,8 @@
             watchesGrid.innerHTML = localWatches.map(p => generateProductCard(p)).join('');
             accessoriesGrid.innerHTML = localAccessories.map(p => generateProductCard(p)).join('');
 
-            // FORCER l'affichage immédiat des cartes (correction)
-            document.querySelectorAll('.product-card').forEach(card => {
+            // ✅ FORCER l'affichage immédiat des cartes (sans attendre le scroll)
+            document.querySelectorAll('#desktop-watches .product-card, #desktop-accessories .product-card').forEach(card => {
                 card.classList.add('visible');
             });
 
@@ -1304,9 +1309,6 @@
                     showProductDetails(data);
                 });
             });
-
-            // Observer les sections pour l'animation de scroll
-            document.querySelectorAll('.section, .why-card').forEach(el => observer.observe(el));
         }
 
         // ===== MODAL =====
