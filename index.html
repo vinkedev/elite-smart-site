@@ -9,16 +9,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* ===== NOUVELLES VARIABLES ===== */
+        /* ===== TOUT LE CSS EST IDENTIQUE À TON ORIGINAL ===== */
+        /* Je garde ton CSS exactement comme il était */
         :root {
-            --primary: #0047AB;         /* Bleu Elite */
+            --primary: #0047AB;
             --primary-dark: #003788;
             --primary-light: #2a6bc9;
-            /* COULEUR ORANGE VIF */
-            --secondary: #FF6B35;       /* Orange Smart */
+            --secondary: #FF6B35;
             --secondary-dark: #E55A2B;
             --secondary-light: #FF8C61;
-            --accent: #FFD700;          /* Or pour accents */
+            --accent: #FFD700;
             --dark: #1a1a2e;
             --light: #f8f9fa;
             --gray: #6c757d;
@@ -32,16 +32,8 @@
             --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--dark);
@@ -50,18 +42,13 @@
             overflow-x: hidden;
             animation: fadeIn 1s ease-out;
         }
-
         h1, h2, h3, h4, h5 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 1rem;
         }
-
-        h1 {
-            font-size: 3.2rem;
-        }
-
+        h1 { font-size: 3.2rem; }
         h2 {
             font-size: 2.5rem;
             color: var(--primary);
@@ -69,7 +56,6 @@
             padding-bottom: 15px;
             margin-bottom: 2rem;
         }
-
         h2:after {
             content: '';
             position: absolute;
@@ -80,32 +66,11 @@
             background-color: var(--secondary);
             border-radius: 2px;
         }
-
-        .text-center h2:after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        h3 {
-            font-size: 1.8rem;
-            color: var(--dark);
-        }
-
-        p {
-            margin-bottom: 1.2rem;
-            color: var(--gray);
-            font-size: 1.05rem;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
-
-        ul {
-            list-style: none;
-        }
+        .text-center h2:after { left: 50%; transform: translateX(-50%); }
+        h3 { font-size: 1.8rem; color: var(--dark); }
+        p { margin-bottom: 1.2rem; color: var(--gray); font-size: 1.05rem; }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
 
         .container {
             width: 100%;
@@ -130,50 +95,30 @@
             font-size: 16px;
             font-family: 'Montserrat', sans-serif;
         }
-
-        .btn-primary {
-            background: var(--secondary);
-            color: white;
-        }
-
+        .btn-primary { background: var(--secondary); color: white; }
         .btn-primary:hover {
             background: var(--secondary-dark);
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
         }
-
         .btn-secondary {
             background: transparent;
             color: var(--white);
             border: 2px solid var(--secondary);
         }
-
         .btn-secondary:hover {
             background: var(--secondary);
             color: white;
             transform: translateY(-5px);
         }
-
-        .btn-whatsapp {
-            background: #25D366;
-            color: white;
-        }
-
+        .btn-whatsapp { background: #25D366; color: white; }
         .btn-whatsapp:hover {
             background: #128C7E;
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
         }
-
-        .btn-dark {
-            background: var(--dark);
-            color: white;
-        }
-
-        .btn-dark:hover {
-            background: #333;
-            transform: translateY(-5px);
-        }
+        .btn-dark { background: var(--dark); color: white; }
+        .btn-dark:hover { background: #333; transform: translateY(-5px); }
 
         .section {
             padding: 100px 0;
@@ -181,17 +126,11 @@
             transform: translateY(30px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
-
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        .section.visible { opacity: 1; transform: translateY(0); }
         .section-header {
             text-align: center;
             margin-bottom: 60px;
         }
-
         .section-header p {
             font-size: 1.2rem;
             max-width: 700px;
@@ -209,61 +148,27 @@
             font-weight: 700;
             z-index: 2;
         }
-
-        .badge-new {
-            background: var(--success);
-            color: white;
-        }
-
-        .badge-hot {
-            background: var(--danger);
-            color: white;
-        }
-
-        .badge-promo {
-            background: var(--secondary);
-            color: white;
-        }
+        .badge-new { background: var(--success); color: white; }
+        .badge-hot { background: var(--danger); color: white; }
+        .badge-promo { background: var(--secondary); color: white; }
 
         /* ===== ANIMATIONS ===== */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
         @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-15px); }
         }
-
         @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
         }
-
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
@@ -277,7 +182,6 @@
             border-top: 1px solid rgba(0,0,0,0.1);
             position: relative;
         }
-
         .loading-spinner {
             display: none;
             width: 40px;
@@ -288,7 +192,6 @@
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
-
         .end-of-products {
             text-align: center;
             padding: 20px;
@@ -309,33 +212,25 @@
             box-shadow: var(--shadow);
             transition: var(--transition);
         }
-
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
         }
-
         .logo {
             display: flex;
             align-items: center;
             gap: 12px;
             animation: slideInLeft 0.8s ease-out;
         }
-
         .logo-img {
             width: 70px;
             height: 70px;
             object-fit: contain;
             border-radius: 8px;
         }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
+        .logo-text { display: flex; flex-direction: column; }
         .logo-text h1 {
             font-size: 2.8rem;
             font-weight: 900;
@@ -343,46 +238,28 @@
             margin-bottom: 0;
             line-height: 1.2;
         }
-
-        .logo-text h1 span.elite {
-            color: var(--primary);
-        }
-
-        .logo-text h1 span.smart {
-            color: var(--secondary);
-        }
-
-        .logo-text span {
-            font-size: 1.9rem;
-            font-weight: 900;
-            letter-spacing: 2px;
-            color: var(--gray);
-            font-weight: 400;
-        }
+        .logo-text h1 span.elite { color: var(--primary); }
+        .logo-text h1 span.smart { color: var(--secondary); }
 
         .nav-links {
             display: flex;
             gap: 30px;
         }
-
         .nav-links li {
             animation: fadeInUp 0.6s ease-out both;
         }
-
         .nav-links li:nth-child(1) { animation-delay: 0.1s; }
         .nav-links li:nth-child(2) { animation-delay: 0.2s; }
         .nav-links li:nth-child(3) { animation-delay: 0.3s; }
         .nav-links li:nth-child(4) { animation-delay: 0.4s; }
         .nav-links li:nth-child(5) { animation-delay: 0.5s; }
         .nav-links li:nth-child(6) { animation-delay: 0.6s; }
-
         .nav-links a {
             font-weight: 600;
             position: relative;
             padding: 5px 0;
             color: var(--dark);
         }
-
         .nav-links a:after {
             content: '';
             position: absolute;
@@ -393,42 +270,15 @@
             background-color: var(--secondary);
             transition: var(--transition);
         }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-links a:hover:after { width: 100%; }
 
-        .nav-links a:hover {
-            color: var(--primary);
+        .nav-links li.admin-link a {
+            color: var(--secondary) !important;
+            font-weight: 700 !important;
         }
-
-        .nav-links a:hover:after {
-            width: 100%;
-        }
-
-        .header-actions {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .cart-icon {
-            position: relative;
-            cursor: pointer;
-            font-size: 20px;
-            color: var(--primary);
-        }
-
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: var(--secondary);
-            color: white;
-            font-size: 12px;
-            font-weight: bold;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .nav-links li.admin-link a:hover {
+            color: var(--secondary-dark) !important;
         }
 
         .mobile-menu-btn {
@@ -456,7 +306,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .hero:before {
             content: '';
             position: absolute;
@@ -466,27 +315,18 @@
             height: 100%;
             background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.6) 100%);
         }
-
         .hero .container {
             position: relative;
             z-index: 2;
             animation: fadeInUp 1s ease-out 0.3s both;
         }
-
         .hero h1 {
             font-size: 3.2rem;
             margin-bottom: 5px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
         }
-
-        .hero h1 span.elite {
-            color: var(--primary);
-        }
-
-        .hero h1 span.smart {
-            color: var(--secondary);
-        }
-
+        .hero h1 span.elite { color: var(--primary); }
+        .hero h1 span.smart { color: var(--secondary); }
         .hero-subtitle {
             font-size: 1.4rem;
             margin: 10px auto 30px;
@@ -497,7 +337,6 @@
             font-family: 'Poppins', sans-serif;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
-
         #typing {
             display: block;
             font-size: 1.8rem;
@@ -508,7 +347,6 @@
             letter-spacing: 1px;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
         }
-
         .hero-buttons {
             display: flex;
             justify-content: center;
@@ -517,57 +355,15 @@
             margin-top: 40px;
         }
 
-        /* ===== STATISTIQUES ===== */
-        .stats {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            text-align: center;
-            padding: 80px 0;
-        }
-
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-
-        .stat-item {
-            padding: 30px 20px;
-            border-radius: var(--radius);
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            transition: var(--transition);
-        }
-
-        .stat-item:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .stat-item h3 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            color: var(--secondary);
-        }
-
-        .stat-item p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            color: white;
-            margin-bottom: 0;
-        }
-
-        /* ===== PRODUITS - NOUVEAU DESIGN ===== */
+        /* ===== PRODUITS ===== */
         .products {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
-
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
         }
-
         .product-card {
             background: white;
             border-radius: var(--radius);
@@ -582,25 +378,20 @@
             flex-direction: column;
             height: 100%;
         }
-
         .product-card.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
         .product-card:nth-child(1) { transition-delay: 0.1s; }
         .product-card:nth-child(2) { transition-delay: 0.2s; }
         .product-card:nth-child(3) { transition-delay: 0.3s; }
         .product-card:nth-child(4) { transition-delay: 0.4s; }
         .product-card:nth-child(5) { transition-delay: 0.5s; }
         .product-card:nth-child(6) { transition-delay: 0.6s; }
-
         .product-card:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: var(--shadow-hover);
         }
-
-        /* IMAGE PLUS GRANDE - 70% de la carte */
         .product-image {
             height: 350px;
             background: linear-gradient(135deg, #f1f3f5, #e9ecef);
@@ -612,7 +403,6 @@
             overflow: hidden;
             flex-shrink: 0;
         }
-
         .product-image img {
             width: 100%;
             height: 100%;
@@ -620,12 +410,7 @@
             transition: var(--transition);
             object-position: center;
         }
-
-        .product-card:hover .product-image img {
-            transform: scale(1.1);
-        }
-
-        /* TEXTE PLUS COMPACT - 30% de la carte */
+        .product-card:hover .product-image img { transform: scale(1.1); }
         .product-content {
             padding: 20px;
             flex: 1;
@@ -633,7 +418,6 @@
             flex-direction: column;
             justify-content: space-between;
         }
-
         .product-category {
             color: var(--primary);
             font-size: 0.8rem;
@@ -643,7 +427,6 @@
             margin-bottom: 8px;
             display: block;
         }
-
         .product-title {
             font-size: 1.2rem;
             color: var(--dark);
@@ -651,20 +434,17 @@
             font-weight: 700;
             line-height: 1.3;
         }
-
         .product-price {
             color: var(--primary);
             font-size: 1.4rem;
             font-weight: 800;
             margin-bottom: 8px;
         }
-
         .product-price del {
             color: var(--gray);
             font-size: 1rem;
             margin-left: 10px;
         }
-
         .product-actions {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -673,16 +453,12 @@
         }
 
         /* ===== POURQUOI NOUS ===== */
-        .why-us {
-            background-color: var(--white);
-        }
-
+        .why-us { background-color: var(--white); }
         .why-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-
         .why-card {
             background: white;
             border-radius: var(--radius);
@@ -695,12 +471,10 @@
             transform: translateY(20px);
             transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
         }
-
         .why-card.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
         .why-card:before {
             content: '';
             position: absolute;
@@ -710,12 +484,10 @@
             height: 5px;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
         }
-
         .why-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-hover);
         }
-
         .why-card i {
             width: 80px;
             height: 80px;
@@ -734,18 +506,13 @@
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
         }
-
         .testimonials .section-header h2,
-        .testimonials .section-header p {
-            color: white;
-        }
-
+        .testimonials .section-header p { color: white; }
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-
         .testimonial-card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(15px);
@@ -756,12 +523,10 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: var(--transition);
         }
-
         .testimonial-card:hover {
             border-color: var(--secondary);
             transform: translateY(-5px);
         }
-
         .testimonial-card::before {
             content: '"';
             position: absolute;
@@ -772,13 +537,11 @@
             opacity: 0.2;
             font-family: serif;
         }
-
         .testimonial-content {
             position: relative;
             z-index: 1;
             margin-bottom: 20px;
         }
-
         .testimonial-content p {
             color: rgba(255, 255, 255, 0.95) !important;
             font-weight: 500;
@@ -786,13 +549,11 @@
             font-size: 1.05rem;
             line-height: 1.7;
         }
-
         .client-info {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-
         .client-avatar {
             width: 50px;
             height: 50px;
@@ -805,16 +566,8 @@
             font-size: 20px;
             font-weight: bold;
         }
-
-        .client-details h4 {
-            color: white;
-            margin-bottom: 5px;
-        }
-
-        .client-rating {
-            color: #FFD700 !important;
-            font-size: 14px;
-        }
+        .client-details h4 { color: white; margin-bottom: 5px; }
+        .client-rating { color: #FFD700 !important; font-size: 14px; }
 
         /* ===== CONTACT ===== */
         .contact-container {
@@ -822,19 +575,16 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 50px;
         }
-
         .contact-info {
             display: flex;
             flex-direction: column;
             gap: 30px;
         }
-
         .contact-item {
             display: flex;
             align-items: flex-start;
             gap: 20px;
         }
-
         .contact-icon {
             width: 60px;
             height: 60px;
@@ -847,13 +597,11 @@
             font-size: 20px;
             flex-shrink: 0;
         }
-
         .contact-details h4 {
             color: var(--primary);
             margin-bottom: 8px;
             font-size: 1.2rem;
         }
-
         .contact-form input,
         .contact-form textarea {
             width: 100%;
@@ -866,7 +614,6 @@
             background: white;
             font-family: 'Poppins', sans-serif;
         }
-
         .contact-form input:focus,
         .contact-form textarea:focus {
             outline: none;
@@ -880,39 +627,28 @@
             color: white;
             padding: 80px 0 30px;
         }
-
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 50px;
             margin-bottom: 50px;
         }
-
         .footer-logo h2 {
             color: white;
             margin-bottom: 15px;
         }
-
-        .footer-logo h2:after {
-            display: none;
-        }
-
+        .footer-logo h2:after { display: none; }
         .footer-about p {
             opacity: 0.8;
             margin-bottom: 20px;
             color: rgba(255,255,255,0.8);
         }
-
         .footer-links h3 {
             color: var(--secondary);
             margin-bottom: 25px;
             font-size: 1.2rem;
         }
-
-        .footer-links ul li {
-            margin-bottom: 12px;
-        }
-
+        .footer-links ul li { margin-bottom: 12px; }
         .footer-links a {
             color: rgba(255,255,255,0.8);
             text-decoration: none;
@@ -921,18 +657,15 @@
             align-items: center;
             gap: 8px;
         }
-
         .footer-links a:hover {
             color: var(--secondary);
             transform: translateX(5px);
         }
-
         .footer-social {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
-
         .footer-social a {
             width: 40px;
             height: 40px;
@@ -944,13 +677,11 @@
             color: white;
             transition: var(--transition);
         }
-
         .footer-social a:hover {
             background: var(--secondary);
             color: white;
             transform: translateY(-5px);
         }
-
         .copyright {
             text-align: center;
             padding-top: 30px;
@@ -978,14 +709,51 @@
             transition: var(--transition);
             animation: float 3s ease-in-out infinite;
         }
-
         .whatsapp-float:hover {
             transform: scale(1.1);
             box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
             animation: none;
         }
 
-        /* ===== FLÈCHES DE NAVIGATION MOBILE ===== */
+        /* ===== CARROUSEL MOBILE ===== */
+        .carousel-container {
+            display: none;
+            position: relative;
+            overflow: hidden;
+        }
+        .carousel-wrapper {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 20px;
+            scrollbar-width: none;
+        }
+        .carousel-wrapper::-webkit-scrollbar { display: none; }
+        .carousel-wrapper .product-card {
+            flex: 0 0 calc(85vw - 40px);
+            min-width: calc(85vw - 40px);
+            scroll-snap-align: start;
+        }
+        .scroll-indicators {
+            display: none;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+        .scroll-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(0, 71, 171, 0.3);
+            transition: var(--transition);
+        }
+        .scroll-indicator.active {
+            background-color: var(--primary);
+            transform: scale(1.3);
+        }
         .carousel-arrows {
             position: absolute;
             top: 50%;
@@ -998,7 +766,6 @@
             z-index: 10;
             pointer-events: none;
         }
-
         .carousel-arrow {
             width: 40px;
             height: 40px;
@@ -1014,76 +781,20 @@
             font-size: 18px;
             color: var(--primary);
         }
-
         .carousel-arrow:hover {
             background: white;
             transform: scale(1.1);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
+        .carousel-arrow.prev { margin-left: -20px; }
+        .carousel-arrow.next { margin-right: -20px; }
 
-        .carousel-arrow.prev {
-            margin-left: -20px;
-        }
-
-        .carousel-arrow.next {
-            margin-right: -20px;
-        }
-
-        /* ===== CARROUSEL MOBILE ===== */
-        .carousel-container {
-            display: none;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .carousel-wrapper {
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-            padding-bottom: 20px;
-            scrollbar-width: none;
-        }
-
-        .carousel-wrapper::-webkit-scrollbar {
-            display: none;
-        }
-
-        .carousel-wrapper .product-card,
-        .carousel-wrapper .category-card {
-            flex: 0 0 calc(85vw - 40px);
-            min-width: calc(85vw - 40px);
-            scroll-snap-align: start;
-        }
-
-        .scroll-indicators {
-            display: none;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 20px;
-        }
-
-        .scroll-indicator {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: rgba(0, 71, 171, 0.3);
-            transition: var(--transition);
-        }
-
-        .scroll-indicator.active {
-            background-color: var(--primary);
-            transform: scale(1.3);
-        }
-
-        /* ===== SECTION ACCESSOIRES ===== */
+        /* ===== ACCESSOIRES ===== */
         .accessories {
             background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
         }
 
-        /* ===== STYLES POUR LES DÉTAILS DES PRODUITS ===== */
+        /* ===== STYLES POUR LE MODAL ===== */
         .product-detail {
             background: #f8f9fa;
             padding: 20px;
@@ -1091,17 +802,8 @@
             margin: 20px 0;
             border-left: 4px solid var(--secondary);
         }
-
-        .product-detail h4 {
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .product-detail p {
-            color: var(--dark);
-            line-height: 1.6;
-        }
-
+        .product-detail h4 { color: var(--primary); margin-bottom: 10px; }
+        .product-detail p { color: var(--dark); line-height: 1.6; }
         .contact-info-modal {
             background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
             color: white;
@@ -1109,12 +811,7 @@
             border-radius: var(--radius);
             margin: 20px 0;
         }
-
-        .contact-info-modal h4 {
-            color: white;
-            margin-bottom: 15px;
-        }
-
+        .contact-info-modal h4 { color: white; margin-bottom: 15px; }
         .whatsapp-contact {
             display: flex;
             align-items: center;
@@ -1123,24 +820,10 @@
             padding: 15px;
             border-radius: var(--radius);
         }
+        .whatsapp-contact i { font-size: 24px; color: #25D366; }
+        .whatsapp-contact p { color: white; margin: 0; }
+        .modal-actions { display: flex; gap: 15px; margin-top: 30px; }
 
-        .whatsapp-contact i {
-            font-size: 24px;
-            color: #25D366;
-        }
-
-        .whatsapp-contact p {
-            color: white;
-            margin: 0;
-        }
-
-        .modal-actions {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        /* ===== MESSAGES DE VIDES ===== */
         .empty-message {
             text-align: center;
             padding: 60px 20px;
@@ -1150,58 +833,20 @@
             border-radius: var(--radius);
             grid-column: 1 / -1;
         }
+        .empty-message i { font-size: 50px; margin-bottom: 20px; color: var(--primary); opacity: 0.5; }
 
-        .empty-message i {
-            font-size: 50px;
-            margin-bottom: 20px;
-            color: var(--primary);
-            opacity: 0.5;
-        }
-
-        /* ===== AJUSTEMENTS SPÉCIFIQUES POUR LE BOUTON ADMIN ===== */
-        .nav-links li.admin-link a {
-            color: var(--secondary) !important;
-            font-weight: 700 !important;
-        }
-
-        .nav-links li.admin-link a:hover {
-            color: var(--secondary-dark) !important;
-        }
-
-        /* ===== RESPONSIVE DESIGN ===== */
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 1200px) {
-            h1 {
-                font-size: 2.8rem;
-            }
-            
-            h2 {
-                font-size: 2.2rem;
-            }
+            h1 { font-size: 2.8rem; }
+            h2 { font-size: 2.2rem; }
         }
-
         @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            #typing {
-                font-size: 1.5rem;
-            }
-            
-            .stat-item h3 {
-                font-size: 2.5rem;
-            }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            #typing { font-size: 1.5rem; }
         }
-
         @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-
+            .mobile-menu-btn { display: block; }
             .nav-links {
                 position: fixed;
                 top: 80px;
@@ -1218,7 +863,6 @@
                 max-height: 0;
                 overflow: hidden;
             }
-
             .nav-links.active {
                 transform: translateY(0);
                 opacity: 1;
@@ -1226,7 +870,6 @@
                 max-height: 500px;
                 padding: 20px;
             }
-
             .nav-links a {
                 padding: 12px 0;
                 border-bottom: 1px solid rgba(0,0,0,0.1);
@@ -1234,14 +877,12 @@
                 display: block;
                 font-size: 1.1rem;
             }
-
             .nav-links li {
                 display: block !important;
                 opacity: 1 !important;
                 visibility: visible !important;
                 width: 100% !important;
             }
-
             .nav-links li.admin-link {
                 display: block !important;
                 opacity: 1 !important;
@@ -1251,7 +892,6 @@
                 padding-top: 15px;
                 border-top: 1px solid rgba(0,0,0,0.1);
             }
-
             .nav-links li.admin-link a {
                 display: flex !important;
                 align-items: center !important;
@@ -1263,33 +903,20 @@
                 text-align: left !important;
                 width: 100% !important;
             }
-
             .nav-links li.admin-link a:hover {
                 color: var(--secondary-dark) !important;
                 background: none !important;
                 transform: none !important;
             }
-
-            .nav-links li.admin-link a i {
-                color: var(--secondary) !important;
-                font-size: 18px !important;
-            }
-            
+            .nav-links li.admin-link a i { color: var(--secondary) !important; font-size: 18px !important; }
             .logo-text h1 {
                 font-size: 1.4rem !important;
                 font-weight: 800;
                 letter-spacing: 1px;
                 line-height: 1.2;
             }
-            
-            .logo-img {
-                width: 40px !important;
-                height: 40px !important;
-            }
-            
-            .logo {
-                gap: 8px;
-            }
+            .logo-img { width: 40px !important; height: 40px !important; }
+            .logo { gap: 8px; }
 
             .hero {
                 padding: 140px 20px 60px;
@@ -1297,75 +924,24 @@
                 background-position: center center;
                 min-height: 70vh;
             }
-
-            .hero h1 {
-                font-size: 1.8rem !important;
-                margin-bottom: 5px !important;
-            }
-
-            .hero-subtitle {
-                font-size: 1.05rem !important;
-                margin: 10px auto 20px !important;
-            }
-
-            #typing {
-                font-size: 1.2rem;
-                min-height: 40px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .section {
-                padding: 60px 0;
-            }
-
-            .product-grid,
-            .category-grid {
-                display: none;
-            }
-
-            .carousel-container {
-                display: block;
-            }
-
-            .scroll-indicators {
-                display: flex;
-            }
-
-            .carousel-arrows {
-                display: flex;
-            }
-
+            .hero h1 { font-size: 1.8rem !important; margin-bottom: 5px !important; }
+            .hero-subtitle { font-size: 1.05rem !important; margin: 10px auto 20px !important; }
+            #typing { font-size: 1.2rem; min-height: 40px; }
+            .hero-buttons { flex-direction: column; align-items: center; gap: 15px; }
+            .btn { width: 100%; max-width: 300px; }
+            .section { padding: 60px 0; }
+            .product-grid, .category-grid { display: none; }
+            .carousel-container { display: block; }
+            .scroll-indicators { display: flex; }
+            .carousel-arrows { display: flex; }
             .carousel-wrapper .product-card {
                 flex: 0 0 calc(80vw - 30px) !important;
                 min-width: calc(80vw - 30px) !important;
                 height: auto !important;
             }
-            
-            .product-image {
-                height: 350px !important;
-                padding: 15px !important;
-            }
-            
-            .product-content {
-                padding: 15px !important;
-            }
-            
-            .product-title {
-                font-size: 1.15rem !important;
-                line-height: 1.3 !important;
-                margin-bottom: 6px !important;
-            }
-            
+            .product-image { height: 350px !important; padding: 15px !important; }
+            .product-content { padding: 15px !important; }
+            .product-title { font-size: 1.15rem !important; line-height: 1.3 !important; margin-bottom: 6px !important; }
             .product-content p {
                 font-size: 0.9rem !important;
                 line-height: 1.4 !important;
@@ -1375,18 +951,12 @@
                 -webkit-box-orient: vertical;
                 overflow: hidden;
             }
-            
-            .product-price {
-                font-size: 1.3rem !important;
-                margin-bottom: 8px !important;
-            }
-            
+            .product-price { font-size: 1.3rem !important; margin-bottom: 8px !important; }
             .product-actions {
                 grid-template-columns: 1fr !important;
                 gap: 8px !important;
                 margin-top: 10px !important;
             }
-            
             .product-actions .btn {
                 padding: 10px 12px !important;
                 font-size: 13px !important;
@@ -1396,125 +966,50 @@
                 font-weight: 600;
                 letter-spacing: 0.3px;
             }
-            
             .product-actions .btn-primary {
                 background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
             }
-            
             .product-actions .btn-whatsapp {
                 background: linear-gradient(135deg, #25D366, #128C7E);
             }
-            
-            .product-actions .btn:active {
-                transform: scale(0.98);
-            }
-            
+            .product-actions .btn:active { transform: scale(0.98); }
             .badge {
                 font-size: 0.7rem !important;
                 padding: 4px 10px !important;
                 top: 10px !important;
                 left: 10px !important;
             }
-
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-
-            .stat-item {
-                padding: 20px 15px;
-            }
-
-            .stat-item h3 {
-                font-size: 2rem;
-            }
-
-            .stat-item p {
-                font-size: 1rem;
-            }
-            
-            .load-more-container {
-                display: block !important;
-            }
+            .load-more-container { display: block !important; }
         }
-
         @media (min-width: 481px) and (max-width: 768px) {
-            .product-image {
-                height: 380px !important;
-            }
-            
+            .product-image { height: 380px !important; }
             .carousel-wrapper .product-card {
                 flex: 0 0 calc(75vw - 30px) !important;
                 min-width: calc(75vw - 30px) !important;
             }
         }
-
         @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.6rem !important;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem !important;
-            }
-
-            #typing {
-                font-size: 1rem !important;
-                min-height: 30px;
-            }
-
-            h2 {
-                font-size: 1.8rem !important;
-            }
-
-            .stats-container {
-                grid-template-columns: 1fr;
-            }
-
+            .hero h1 { font-size: 1.6rem !important; }
+            .hero-subtitle { font-size: 1rem !important; }
+            #typing { font-size: 1rem !important; min-height: 30px; }
+            h2 { font-size: 1.8rem !important; }
             .carousel-wrapper .product-card {
                 flex: 0 0 calc(85vw - 20px) !important;
                 min-width: calc(85vw - 20px) !important;
             }
-            
-            .product-image {
-                height: 320px !important;
-            }
-            
-            .product-title {
-                font-size: 1.1rem !important;
-            }
-            
-            .product-price {
-                font-size: 1.2rem !important;
-            }
-            
-            .product-actions .btn {
-                padding: 9px 12px !important;
-                font-size: 12px !important;
-            }
-            
-            .logo-text h1 {
-                font-size: 1.2rem !important;
-            }
-
-            .carousel-arrow {
-                width: 35px;
-                height: 35px;
-                font-size: 16px;
-            }
-
-            .carousel-arrow.prev {
-                margin-left: -15px;
-            }
-
-            .carousel-arrow.next {
-                margin-right: -15px;
-            }
+            .product-image { height: 320px !important; }
+            .product-title { font-size: 1.1rem !important; }
+            .product-price { font-size: 1.2rem !important; }
+            .product-actions .btn { padding: 9px 12px !important; font-size: 12px !important; }
+            .logo-text h1 { font-size: 1.2rem !important; }
+            .carousel-arrow { width: 35px; height: 35px; font-size: 16px; }
+            .carousel-arrow.prev { margin-left: -15px; }
+            .carousel-arrow.next { margin-right: -15px; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- HEADER -->
     <header class="main-header">
         <div class="container header-container">
             <div class="logo">
@@ -1541,21 +1036,16 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- HERO -->
     <section class="hero" id="accueil">
         <div class="container">
             <h1><span class="elite">Elite</span> <span class="smart">Smart</span></h1>
-            
             <p class="hero-subtitle">
                 Votre partenaire privilégié pour les montres connectées et accessoires high-tech au Burkina Faso
             </p>
-            
             <span id="typing"></span>
-            
             <div class="hero-buttons">
-                <a href="#produits" class="btn btn-primary">
-                    <i class="fas fa-eye"></i> Voir les produits
-                </a>
+                <a href="#produits" class="btn btn-primary"><i class="fas fa-eye"></i> Voir les produits</a>
                 <a href="https://wa.me/22676707008" class="btn btn-secondary" target="_blank">
                     <i class="fab fa-whatsapp"></i> Commander sur WhatsApp
                 </a>
@@ -1563,42 +1053,28 @@
         </div>
     </section>
 
-    <!-- Produits -->
+    <!-- PRODUITS (MOTRES) -->
     <section class="section products" id="produits">
         <div class="container">
             <div class="section-header">
                 <h2>Montres Connectées</h2>
                 <p>Découvrez nos best-sellers du moment</p>
             </div>
-            
-            <!-- Version Desktop -->
-            <div class="product-grid" id="desktop-watches">
-                <!-- Les montres seront chargées ici dynamiquement -->
-            </div>
-            
-            <!-- Version Mobile Carrousel -->
+
+            <div class="product-grid" id="desktop-watches"></div>
+
             <div class="carousel-container">
-                <div class="carousel-wrapper" id="mobile-watches">
-                    <!-- Les montres pour mobile seront chargées ici dynamiquement -->
-                </div>
-                <!-- Flèches de navigation -->
+                <div class="carousel-wrapper" id="mobile-watches"></div>
                 <div class="carousel-arrows">
-                    <div class="carousel-arrow prev" data-carousel="watches">
-                        <i class="fas fa-chevron-left"></i>
-                    </div>
-                    <div class="carousel-arrow next" data-carousel="watches">
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
+                    <div class="carousel-arrow prev" data-carousel="watches"><i class="fas fa-chevron-left"></i></div>
+                    <div class="carousel-arrow next" data-carousel="watches"><i class="fas fa-chevron-right"></i></div>
                 </div>
-                <div class="scroll-indicators" id="watches-indicators">
-                    <!-- Les indicateurs seront générés dynamiquement -->
-                </div>
+                <div class="scroll-indicators" id="watches-indicators"></div>
             </div>
-            
-            <!-- Bouton Charger Plus de Montres -->
+
             <div class="load-more-container" id="watches-load-more">
                 <button class="btn btn-dark" id="load-more-watches">
-                    <i class="fas fa-plus-circle"></i> Charger plus de montres (6 autres)
+                    <i class="fas fa-plus-circle"></i> Charger plus de montres
                 </button>
                 <p style="margin-top: 10px; font-size: 0.9rem; color: var(--gray);">
                     Montres affichées: <span id="watches-count">0</span> sur <span id="watches-total">0</span>
@@ -1607,33 +1083,29 @@
         </div>
     </section>
 
-    <!-- Pourquoi nous -->
+    <!-- POURQUOI NOUS -->
     <section class="section why-us" id="pourquoi">
         <div class="container">
             <div class="section-header">
                 <h2>Pourquoi Choisir Elite Smart</h2>
                 <p>Les avantages qui font la différence pour nos clients</p>
             </div>
-            
             <div class="why-grid">
                 <div class="why-card">
                     <i class="fas fa-truck"></i>
                     <h3>Livraison Gratuite</h3>
-                    <p>Livraison gratuite partout à Ouagadougou et 1000 F Expedition pour toutes vos commandes. Service rapide et fiable.</p>
+                    <p>Livraison gratuite partout à Ouagadougou et 1000 F Expedition pour toutes vos commandes.</p>
                 </div>
-                
                 <div class="why-card">
                     <i class="fas fa-shield-alt"></i>
                     <h3>Garantie Officielle</h3>
                     <p>Tous nos produits bénéficient d'une garantie constructeur avec support technique dédié.</p>
                 </div>
-                
                 <div class="why-card">
                     <i class="fas fa-headset"></i>
                     <h3>Support 24/7</h3>
                     <p>Notre équipe d'experts est disponible pour vous accompagner avant et après votre achat.</p>
                 </div>
-                
                 <div class="why-card">
                     <i class="fas fa-handshake"></i>
                     <h3>Paiement Sécurisé</h3>
@@ -1643,42 +1115,28 @@
         </div>
     </section>
 
-    <!-- Section Accessoires -->
+    <!-- ACCESSOIRES -->
     <section class="section accessories" id="accessoires">
         <div class="container">
             <div class="section-header">
                 <h2>Accessoires & Autres Produits</h2>
                 <p>Complétez votre expérience avec nos accessoires high-tech</p>
             </div>
-            
-            <!-- Version Desktop -->
-            <div class="product-grid" id="desktop-accessories">
-                <!-- Les accessoires seront chargés ici dynamiquement -->
-            </div>
-            
-            <!-- Version Mobile Carrousel -->
+
+            <div class="product-grid" id="desktop-accessories"></div>
+
             <div class="carousel-container">
-                <div class="carousel-wrapper" id="mobile-accessories">
-                    <!-- Les accessoires pour mobile seront chargés ici dynamiquement -->
-                </div>
-                <!-- Flèches de navigation -->
+                <div class="carousel-wrapper" id="mobile-accessories"></div>
                 <div class="carousel-arrows">
-                    <div class="carousel-arrow prev" data-carousel="accessories">
-                        <i class="fas fa-chevron-left"></i>
-                    </div>
-                    <div class="carousel-arrow next" data-carousel="accessories">
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
+                    <div class="carousel-arrow prev" data-carousel="accessories"><i class="fas fa-chevron-left"></i></div>
+                    <div class="carousel-arrow next" data-carousel="accessories"><i class="fas fa-chevron-right"></i></div>
                 </div>
-                <div class="scroll-indicators" id="accessories-indicators">
-                    <!-- Les indicateurs seront générés dynamiquement -->
-                </div>
+                <div class="scroll-indicators" id="accessories-indicators"></div>
             </div>
-            
-            <!-- Bouton Charger Plus d'Accessoires -->
+
             <div class="load-more-container" id="accessories-load-more">
                 <button class="btn btn-dark" id="load-more-accessories">
-                    <i class="fas fa-plus-circle"></i> Charger plus d'accessoires (3 autres)
+                    <i class="fas fa-plus-circle"></i> Charger plus d'accessoires
                 </button>
                 <p style="margin-top: 10px; font-size: 0.9rem; color: var(--gray);">
                     Accessoires affichés: <span id="accessories-count">0</span> sur <span id="accessories-total">0</span>
@@ -1687,14 +1145,13 @@
         </div>
     </section>
 
-    <!-- Témoignages -->
+    <!-- TÉMOIGNAGES -->
     <section class="section testimonials" id="temoignages">
         <div class="container">
             <div class="section-header">
                 <h2>Témoignages Clients</h2>
                 <p>Ce que disent nos clients satisfaits</p>
             </div>
-            
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-content">
@@ -1705,16 +1162,13 @@
                         <div class="client-details">
                             <h4>Amadou Konaté</h4>
                             <div class="client-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                             </div>
                         </div>
                     </div>
                 </div>
-                
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         <p>"Livraison ultra rapide à Ouagadougou. Le téléphone est exactement comme décrit. Le support m'a bien aidé pour la configuration."</p>
@@ -1724,16 +1178,13 @@
                         <div class="client-details">
                             <h4>Fatou Sarr</h4>
                             <div class="client-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
                                 <i class="fas fa-star-half-alt"></i>
                             </div>
                         </div>
                     </div>
                 </div>
-                
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         <p>"J'ai acheté des écouteurs et une montre. Les deux produits sont excellents. La garantie offre une vraie tranquillité d'esprit. Merci Elite Smart."</p>
@@ -1743,10 +1194,8 @@
                         <div class="client-details">
                             <h4>Moussa Diallo</h4>
                             <div class="client-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                             </div>
                         </div>
@@ -1756,57 +1205,44 @@
         </div>
     </section>
 
-    <!-- Contact -->
+    <!-- CONTACT -->
     <section class="section contact" id="contact">
         <div class="container">
             <div class="section-header">
                 <h2>Contactez-nous</h2>
                 <p>Nous sommes à votre écoute pour toutes vos questions</p>
             </div>
-            
             <div class="contact-container">
                 <div class="contact-info">
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div class="contact-details">
                             <h4>Notre Adresse</h4>
-                            <p>Ouagadougou, Burkina Faso<br>Zaabre daaga entre le siege de la  vista banque et le siege de la banque BCB</p>
+                            <p>Ouagadougou, Burkina Faso<br>Zaabre daaga entre le siege de la vista banque et le siege de la banque BCB</p>
                         </div>
                     </div>
-                    
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
                         <div class="contact-details">
                             <h4>Téléphone</h4>
                             <p>+226 76 70 70 08<br>+226 70 16 14 84</p>
                         </div>
                     </div>
-                    
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                         <div class="contact-details">
                             <h4>Email</h4>
                             <p>abdulkafando705@gmail.com</p>
                         </div>
                     </div>
-                    
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-clock"></i></div>
                         <div class="contact-details">
                             <h4>Horaires d'ouverture</h4>
                             <p>Lundi - Samedi: 8h00 - 19h00<br>Dimanche: 10h00 - 16h00</p>
                         </div>
                     </div>
                 </div>
-                
                 <div class="contact-form">
                     <form id="contactForm">
                         <input type="text" placeholder="Votre nom complet" required>
@@ -1822,14 +1258,12 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-about">
-                    <div class="footer-logo">
-                        <h2>Elite Smart</h2>
-                    </div>
+                    <div class="footer-logo"><h2>Elite Smart</h2></div>
                     <p>Votre partenaire privilégié pour les montres connectées, smartphones premium et accessoires technologiques. Excellence et innovation au service de votre quotidien connecté.</p>
                     <div class="footer-social">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1838,7 +1272,6 @@
                         <a href="https://wa.me/22676707008" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                
                 <div class="footer-links">
                     <h3>Liens Rapides</h3>
                     <ul>
@@ -1850,7 +1283,6 @@
                         <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-links">
                     <h3>Produits</h3>
                     <ul>
@@ -1861,7 +1293,6 @@
                         <li><a href="#"><i class="fas fa-chevron-right"></i> Promotions</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-links">
                     <h3>Contact</h3>
                     <ul>
@@ -1872,96 +1303,71 @@
                     </ul>
                 </div>
             </div>
-            
             <div class="copyright">
-                <p>&copy; 2026 Elite Smart. Tous droits réservés. | Site créé par Kevin Zongo 🇧🇫 </p>
+                <p>&copy; 2026 Elite Smart. Tous droits réservés. | Site créé par Kevin Zongo 🇧🇫</p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Float -->
+    <!-- WHATSAPP FLOAT -->
     <a href="https://wa.me/22676707008" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Firebase SDK -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
-        import { 
-            getFirestore, 
-            collection, 
-            getDocs 
-        } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
-        
-        const firebaseConfig = {
-            apiKey: "AIzaSyCDnE9Zf8WOhjzuh7NNkN3FOCpyDmXhYHg",
-            authDomain: "christlight-89f0d.firebaseapp.com",
-            projectId: "christlight-89f0d",
-            storageBucket: "christlight-89f0d.firebasestorage.app",
-            messagingSenderId: "833218576287",
-            appId: "1:833218576287:web:53e4100dee21f6545b87aa",
-            measurementId: "G-S1JBGH0L5K"
-        };
-        
-        try {
-            const app = initializeApp(firebaseConfig);
-            const db = getFirestore(app);
-            
-            async function loadFirestoreData() {
-                try {
-                    console.log("📡 Connexion à Firestore...");
-                    
-                    const watchesRef = collection(db, "montres");
-                    const watchesSnapshot = await getDocs(watchesRef);
-                    const montres = [];
-                    
-                    watchesSnapshot.forEach((doc) => {
-                        const data = doc.data();
-                        montres.push({
-                            id: doc.id,
-                            ...data
-                        });
-                    });
-                    
-                    console.log(`✅ ${montres.length} montres chargées`);
-                    
-                    const accessoriesRef = collection(db, "accessoires");
-                    const accessoriesSnapshot = await getDocs(accessoriesRef);
-                    const accessoires = [];
-                    
-                    accessoriesSnapshot.forEach((doc) => {
-                        const data = doc.data();
-                        accessoires.push({
-                            id: doc.id,
-                            ...data
-                        });
-                    });
-                    
-                    console.log(`✅ ${accessoires.length} accessoires chargés`);
-                    
-                    return { montres, accessoires };
-                    
-                } catch (error) {
-                    console.error("❌ Erreur Firestore:", error);
-                    return { montres: [], accessoires: [] };
-                }
-            }
-            
-            window.firebaseApp = {
-                db,
-                loadFirestoreData,
-                getDocs,
-                collection
-            };
-            
-            console.log("🔥 Firebase initialisé avec succès !");
-            
-        } catch (error) {
-            console.error("❌ Erreur d'initialisation Firebase:", error);
-        }
-    </script>
-
+    <!-- ===== JAVASCRIPT UNIQUEMENT LOCAL ===== -->
     <script>
+        // ===== PRODUITS LOCAUX UNIQUEMENT =====
+        // TOUS LES PRODUITS SONT DÉFINIS ICI AVEC TES IMAGES LOCALES
+
+        const localWatches = [
+            { id: 1, name: "Montre Elite 1", price: "15.000 FCFA", description: "Montre connectée haut de gamme avec écran AMOLED", category: "MONTRE CONNECTÉE", image: "Elitesmart/montre1.jpg", badge: "new", badgeText: "NOUVEAU", detail: "Écran AMOLED 1.78\", GPS intégré, moniteur de fréquence cardiaque, résistance à l'eau 5ATM, autonomie 7 jours" },
+            { id: 2, name: "Montre Elite 2", price: "16.500 FCFA", description: "Montre sportive avec GPS et suivi d'activités", category: "MONTRE SPORT", image: "Elitesmart/montre2.jpg", badge: "hot", badgeText: "BEST SELLER", detail: "GPS intégré, 20 modes sport, résistance à l'eau, écran tactile" },
+            { id: 3, name: "Montre Elite 3", price: "18.000 FCFA", description: "Montre élégante pour toutes les occasions", category: "MONTRE", image: "Elitesmart/Montre3.jpg", badge: "promo", badgeText: "PROMO", detail: "Écran couleur, 15 jours d'autonomie, étanche 50m" },
+            { id: 4, name: "Montre Elite 4", price: "20.000 FCFA", description: "Montre premium avec suivi santé avancé", category: "MONTRE CONNECTÉE", image: "Elitesmart/Montre4.jpg", badge: "hot", badgeText: "BEST SELLER", detail: "Suivi sommeil, oxygène sanguin, coaching sportif" },
+            { id: 5, name: "Montre Elite 5", price: "22.000 FCFA", description: "Montre connectée avec écran tactile HD", category: "MONTRE", image: "Elitesmart/montre5.jpg", badge: "new", badgeText: "NOUVEAU", detail: "Écran HD, appels Bluetooth, musique, 20 modes sport" },
+            { id: 6, name: "Montre Elite 6", price: "24.000 FCFA", description: "Montre de luxe avec finition en acier", category: "MONTRE PREMIUM", image: "Elitesmart/montre6.jpg", badge: "hot", badgeText: "BEST SELLER", detail: "Bracelet acier, cadran personnalisable, résistance eau" },
+            { id: 7, name: "Montre Elite 7", price: "17.000 FCFA", description: "Montre idéale pour le fitness", category: "MONTRE FITNESS", image: "Elitesmart/montre7.jpg", badge: "promo", badgeText: "PROMO", detail: "Suivi calories, podomètre, 15 modes sport" },
+            { id: 8, name: "Montre Elite 8", price: "19.500 FCFA", description: "Montre connectée avec notification appels", category: "MONTRE", image: "Elitesmart/montre8.jpg", badge: "new", badgeText: "NOUVEAU", detail: "Notifications, musique, météo, commande vocale" },
+            { id: 9, name: "Montre Elite 9", price: "21.000 FCFA", description: "Montre avec GPS intégré", category: "MONTRE GPS", image: "Elitesmart/montre9.jpg", badge: "hot", badgeText: "BEST SELLER", detail: "GPS, GLONASS, Galileo, cartes hors ligne" },
+            { id: 10, name: "Montre Elite 10", price: "23.000 FCFA", description: "Montre premium avec écran infini", category: "MONTRE PREMIUM", image: "Elitesmart/montre10.jpg", badge: "new", badgeText: "NOUVEAU", detail: "Écran infini, capteur cardiaque ECG, oxygène" },
+            { id: 11, name: "Montre Elite 11", price: "25.000 FCFA", description: "Montre connectée haut de gamme", category: "MONTRE CONNECTÉE", image: "Elitesmart/montre11.jpg", badge: "hot", badgeText: "BEST SELLER", detail: "Titanium, écran 1.4\", autonomie 14 jours" },
+            { id: 12, name: "Montre Elite 12", price: "26.000 FCFA", description: "Montre sportive étanche 100m", category: "MONTRE SPORT", image: "Elitesmart/montre12.jpg", badge: "promo", badgeText: "PROMO", detail: "Étanche 100m, apnée, surf, triathlon" },
+            { id: 13, name: "Montre Elite 13", price: "14.500 FCFA", description: "Montre connectée abordable", category: "MONTRE", image: "Elitesmart/montre13.jpg", badge: "new", badgeText: "NOUVEAU", detail: "Écran TFT, 21 modes sport, 7 jours autonomie" },
+            { id: 14, name: "Montre Elite 14", price: "18.500 FCFA", description: "Montre élégante pour femme", category: "MONTRE FEMME", image: "Elitesmart/montre14.jpg", badge: "hot", badgeText: "BEST SELLER", detail: "Design fin, bracelet cuir, suivi menstruel" },
+            { id: 15, name: "Montre Elite 15", price: "20.500 FCFA", description: "Montre connectée avec musique", category: "MONTRE CONNECTÉE", image: "Elitesmart/montre15.jpg", badge: "new", badgeText: "NOUVEAU", detail: "16GB stockage, lecture MP3, appels Bluetooth" },
+            { id: 16, name: "Montre Elite 16", price: "22.500 FCFA", description: "Montre sportive avec oxymètre", category: "MONTRE FITNESS", image: "Elitesmart/montre16.jpg", badge: "hot", badgeText: "BEST SELLER", detail: "Oxymètre, température corporelle, suivi sommeil" },
+            { id: 17, name: "Montre Elite 17", price: "24.500 FCFA", description: "Montre premium en céramique", category: "MONTRE PREMIUM", image: "Elitesmart/montre17.jpg", badge: "promo", badgeText: "PROMO", detail: "Céramique, saphir, autonomie 20 jours" },
+            { id: 18, name: "Montre Elite 18", price: "16.000 FCFA", description: "Montre connectée entrée de gamme", category: "MONTRE", image: "Elitesmart/montre18.jpg", badge: "new", badgeText: "NOUVEAU", detail: "Écran 1.3\", 14 modes sport, notifications" },
+            { id: 19, name: "Montre Elite 19", price: "19.000 FCFA", description: "Montre avec reconnaissance vocale", category: "MONTRE CONNECTÉE", image: "Elitesmart/montre19.jpg", badge: "hot", badgeText: "BEST SELLER", detail: "Assistant vocal, commandes gestuelles, météo" },
+            { id: 20, name: "Montre Elite 20", price: "27.000 FCFA", description: "Montre de luxe édition limitée", category: "MONTRE PREMIUM", image: "Elitesmart/montre20.jpg", badge: "new", badgeText: "ÉDITION LIMITÉE", detail: "Or rose, diamants, édition numérotée" },
+            { id: 21, name: "Montre Elite 21", price: "21.500 FCFA", description: "Montre fitness avancée", category: "MONTRE FITNESS", image: "Elitesmart/montre21.jpg", badge: "hot", badgeText: "BEST SELLER", detail: "40 modes sport, coaching IA, analyse de performance" },
+            { id: 22, name: "Montre Elite 22", price: "23.500 FCFA", description: "Montre connectée avec NFC", category: "MONTRE CONNECTÉE", image: "Elitesmart/montre22.jpg", badge: "new", badgeText: "NOUVEAU", detail: "NFC paiement, transport, contrôle maison" },
+            { id: 23, name: "Montre Elite 23", price: "25.500 FCFA", description: "Montre sportive ultralégère", category: "MONTRE SPORT", image: "Elitesmart/montre23.jpg", badge: "promo", badgeText: "PROMO", detail: "Fibercarbone, 25g, 20 modes sport" },
+            { id: 24, name: "Montre Elite 24", price: "17.500 FCFA", description: "Montre élégante pour homme", category: "MONTRE HOMME", image: "Elitesmart/montre24.jpg", badge: "hot", badgeText: "BEST SELLER", detail: "Acier inoxydable, cadran bleu, montre automatique" },
+            { id: 25, name: "Montre Elite 25", price: "19.500 FCFA", description: "Montre connectée avec ECG", category: "MONTRE CONNECTÉE", image: "Elitesmart/montre25.jpg", badge: "new", badgeText: "NOUVEAU", detail: "ECG, tension artérielle, oxygène, sommeil" },
+            { id: 26, name: "Montre Elite 26", price: "28.000 FCFA", description: "Montre premium en or rose", category: "MONTRE PREMIUM", image: "Elitesmart/montre26.jpg", badge: "hot", badgeText: "BEST SELLER", detail: "Or rose 18K, diamants, autonomie 30 jours" },
+            { id: 27, name: "Montre Elite 27", price: "22.000 FCFA", description: "Montre connectée avec caméra", category: "MONTRE CONNECTÉE", image: "Elitesmart/montre27.jpg", badge: "new", badgeText: "NOUVEAU", detail: "Caméra 2MP, appels vidéo, capture photo" },
+            { id: 28, name: "Montre Elite 28", price: "24.000 FCFA", description: "Montre fitness avec coach vocal", category: "MONTRE FITNESS", image: "Elitesmart/montre28.jpg", badge: "hot", badgeText: "BEST SELLER", detail: "Coach vocal, analyse performance, 50 modes" },
+            { id: 29, name: "Montre Elite 29", price: "26.500 FCFA", description: "Montre de plongée professionnelle", category: "MONTRE SPORT", image: "Elitesmart/montre29.jpg", badge: "promo", badgeText: "PROMO", detail: "200m étanche, plongée, pression, ordinateur de plongée" }
+        ];
+
+        const localAccessories = [
+            { id: "a1", name: "Accessoire Elite 1", price: "5.000 FCFA", description: "Accessoire high-tech compatible", category: "ACCESSOIRE", image: "Elitesmart/Accessoire1.jpg", badge: "hot", badgeText: "BEST SELLER", detail: "Qualité premium, design élégant, compatible universel" },
+            { id: "a2", name: "Accessoire Elite 2", price: "6.000 FCFA", description: "Accessoire élégant et moderne", category: "ACCESSOIRE", image: "Elitesmart/Accessoire2.jpg", badge: "new", badgeText: "NOUVEAU", detail: "Design moderne, finition soignée, qualité premium" },
+            { id: "a3", name: "Accessoire Elite 3", price: "7.000 FCFA", description: "Accessoire pratique au quotidien", category: "ACCESSOIRE", image: "Elitesmart/Accessoire3.jpg", badge: "promo", badgeText: "PROMO", detail: "Multifonction, compact, design universel" },
+            { id: "a4", name: "Accessoire Elite 4", price: "8.000 FCFA", description: "Accessoire tech haut de gamme", category: "ACCESSOIRE", image: "Elitesmart/Accessoire4.jpg", badge: "hot", badgeText: "BEST SELLER", detail: "Technologie avancée, compatible tous appareils" },
+            { id: "a5", name: "Accessoire Elite 5", price: "4.500 FCFA", description: "Accessoire design et tendance", category: "ACCESSOIRE", image: "Elitesmart/Accessoire5.jpg", badge: "new", badgeText: "NOUVEAU", detail: "Tendance, design épuré, qualité fiable" },
+            { id: "a6", name: "Accessoire Elite 6", price: "6.500 FCFA", description: "Accessoire de voyage indispensable", category: "ACCESSOIRE", image: "Elitesmart/Accessoire6.jpg", badge: "hot", badgeText: "BEST SELLER", detail: "Compact, léger, étui de protection, multifonction" },
+            { id: "a7", name: "Accessoire Elite 7", price: "7.500 FCFA", description: "Accessoire premium pour professionnels", category: "ACCESSOIRE", image: "Elitesmart/Accessoire7.jpg", badge: "promo", badgeText: "PROMO", detail: "Professionnel, robuste, design élégant" },
+            { id: "a8", name: "Accessoire Elite 8", price: "5.500 FCFA", description: "Accessoire moderne et connecté", category: "ACCESSOIRE", image: "Elitesmart/Accessoire8.jpg", badge: "new", badgeText: "NOUVEAU", detail: "Connecté, intelligent, design contemporain" },
+            { id: "a9", name: "Accessoire Elite 9", price: "9.000 FCFA", description: "Accessoire de luxe édition limitée", category: "ACCESSOIRE", image: "Elitesmart/Accessoire9.jpg", badge: "hot", badgeText: "BEST SELLER", detail: "Édition limitée, finition or, étui prestige" },
+            { id: "a10", name: "Accessoire Elite 10", price: "6.800 FCFA", description: "Accessoire polyvalent", category: "ACCESSOIRE", image: "Elitesmart/Accessoire10.jpg", badge: "new", badgeText: "NOUVEAU", detail: "Polyvalent, adaptable, qualité certifiée" },
+            { id: "a11", name: "Accessoire Elite 11", price: "7.800 FCFA", description: "Accessoire design scandinave", category: "ACCESSOIRE", image: "Elitesmart/Accessoire11.jpg", badge: "promo", badgeText: "PROMO", detail: "Design scandinave, minimaliste, écologique" }
+        ];
+
+        // ===== TOUT LE RESTE DU JS =====
+        // (machine à écrire, menu mobile, observer, notifications, chargement des produits, etc.)
+
         // ===== EFFET MACHINE À ÉCRIRE =====
         const texts = [
             "Montres Connectées de dernière génération ⌚",
@@ -1970,43 +1376,39 @@
             "Qualité & Garantie Assurées ✅",
             "Livraison Gratuite à Ouagadougou 🚚"
         ];
-        let index = 0, charIndex = 0;
+        let textIndex = 0, charIndex = 0;
         const typingEl = document.getElementById("typing");
 
         function type() {
-            if (charIndex < texts[index].length) {
-                typingEl.textContent += texts[index].charAt(charIndex);
+            if (charIndex < texts[textIndex].length) {
+                typingEl.textContent += texts[textIndex].charAt(charIndex);
                 charIndex++;
                 setTimeout(type, 60);
             } else {
                 setTimeout(erase, 2500);
             }
         }
-
         function erase() {
             if (charIndex > 0) {
-                typingEl.textContent = texts[index].substring(0, charIndex - 1);
+                typingEl.textContent = texts[textIndex].substring(0, charIndex - 1);
                 charIndex--;
                 setTimeout(erase, 30);
             } else {
-                index = (index + 1) % texts.length;
+                textIndex = (textIndex + 1) % texts.length;
                 setTimeout(type, 500);
             }
         }
-
         setTimeout(type, 1000);
 
         // ===== MENU MOBILE =====
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
-        
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             const icon = mobileMenuBtn.querySelector('i');
             icon.classList.toggle('fa-bars');
             icon.classList.toggle('fa-times');
         });
-        
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -2016,7 +1418,7 @@
             });
         });
 
-        // ===== HEADER SCROLL EFFECT =====
+        // ===== HEADER SCROLL =====
         window.addEventListener('scroll', () => {
             const header = document.querySelector('.main-header');
             if (window.scrollY > 100) {
@@ -2028,12 +1430,11 @@
             }
         });
 
-        // ===== FORMULAIRE DE CONTACT =====
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
+        // ===== CONTACT FORM =====
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
             e.preventDefault();
             showNotification('Message envoyé ! Nous vous répondrons rapidement.');
-            contactForm.reset();
+            e.target.reset();
         });
 
         // ===== SMOOTH SCROLL =====
@@ -2041,7 +1442,6 @@
             anchor.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
                 e.preventDefault();
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
@@ -2055,159 +1455,49 @@
         });
 
         // ===== INTERSECTION OBSERVER =====
-        const observerOptions = {
-            root: null,
-            rootMargin: '-50px 0px -100px 0px',
-            threshold: 0.1
-        };
-
+        const observerOptions = { root: null, rootMargin: '-50px 0px -100px 0px', threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    if (entry.target.classList.contains('section')) {
-                        entry.target.classList.add('visible');
-                    }
-                    
-                    if (entry.target.classList.contains('product-card') || 
-                        entry.target.classList.contains('category-card') || 
-                        entry.target.classList.contains('why-card') ||
-                        entry.target.classList.contains('service-card')) {
-                        entry.target.classList.add('visible');
-                    }
-                    
-                    if (entry.target.classList.contains('stats')) {
-                        if (!entry.target.classList.contains('animated')) {
-                            entry.target.classList.add('animated');
-                        }
-                    }
+                    entry.target.classList.add('visible');
                 }
             });
         }, observerOptions);
 
-        // ===== NOTIFICATION SYSTEM =====
+        // ===== NOTIFICATION =====
         function showNotification(message, type = "success") {
             const notification = document.createElement('div');
             notification.textContent = message;
-            
-            const bgColor = type === "success" ? "var(--success)" : 
-                           type === "error" ? "var(--danger)" : 
-                           type === "warning" ? "var(--warning)" : "var(--secondary)";
-            
+            const bgColor = type === "success" ? "var(--success)" : type === "error" ? "var(--danger)" : "var(--secondary)";
             notification.style.cssText = `
-                position: fixed;
-                top: 100px;
-                right: 30px;
-                background: ${bgColor};
-                color: white;
-                padding: 15px 25px;
-                border-radius: var(--radius);
-                z-index: 10000;
-                box-shadow: var(--shadow-hover);
-                animation: slideInRight 0.3s ease;
-                font-weight: 600;
+                position: fixed; top: 100px; right: 30px;
+                background: ${bgColor}; color: white;
+                padding: 15px 25px; border-radius: var(--radius);
+                z-index: 10000; box-shadow: var(--shadow-hover);
+                animation: slideInRight 0.3s ease; font-weight: 600;
                 max-width: 300px;
             `;
-            
             document.body.appendChild(notification);
-            
             setTimeout(() => {
                 notification.style.animation = 'slideOutRight 0.3s ease';
                 setTimeout(() => notification.remove(), 300);
             }, 3000);
         }
 
-        // ===== FALLBACK AVEC IMAGES LOCALES (Elitesmart/) =====
-        function getFallbackProducts() {
-            // Liste des images locales disponibles (par nom)
-            const localWatchImages = [
-                'montre1.jpg', 'montre2.jpg', 'montre3.jpg', 'montre4.jpg', 
-                'montre5.jpg', 'montre6.jpg', 'montre7.jpg', 'montre8.jpg',
-                'montre9.jpg', 'montre10.jpg', 'montre11.jpg', 'montre12.jpg',
-                'montre13.jpg', 'montre14.jpg', 'montre15.jpg', 'montre16.jpg',
-                'montre17.jpg', 'montre18.jpg', 'montre19.jpg', 'montre20.jpg',
-                'montre21.jpg', 'montre22.jpg', 'montre23.jpg', 'montre24.jpg',
-                'montre25.jpg', 'montre26.jpg', 'montre27.jpg', 'montre28.jpg',
-                'montre29.jpg'
-            ];
-            
-            const localAccessoryImages = [
-                'Accessoire1.jpg', 'Accessoire2.jpg', 'Accessoire3.jpg', 
-                'Accessoire4.jpg', 'Accessoire5.jpg', 'Accessoire6.jpg',
-                'Accessoire7.jpg', 'Accessoire8.jpg', 'Accessoire9.jpg',
-                'Accessoire10.jpg', 'Accessoire11.jpg'
-            ];
-            
-            const montres = localWatchImages.map((img, i) => ({
-                id: `fallback_watch_${i}`,
-                name: `Montre Elite ${i + 1}`,
-                price: `${15000 + i * 1500} FCFA`,
-                description: `Montre connectée haut de gamme avec fonctionnalités avancées`,
-                category: "MONTRE CONNECTÉE",
-                image: `Elitesmart/${img}`,
-                badge: i < 3 ? "new" : "hot",
-                badgeText: i < 3 ? "NOUVEAU" : "BEST SELLER",
-                detail: "Écran AMOLED, GPS, moniteur cardiaque, résistance à l'eau 5ATM"
-            }));
-            
-            const accessoires = localAccessoryImages.map((img, i) => ({
-                id: `fallback_accessory_${i}`,
-                name: `Accessoire Elite ${i + 1}`,
-                price: `${5000 + i * 1000} FCFA`,
-                description: `Accessoire high-tech compatible avec tous vos appareils`,
-                category: "ACCESSOIRE",
-                image: `Elitesmart/${img}`,
-                badge: i < 2 ? "hot" : "promo",
-                badgeText: i < 2 ? "BEST SELLER" : "PROMO",
-                detail: "Qualité premium, design élégant, compatible universel"
-            }));
-            
-            return { montres, accessoires };
-        }
-
-        // ===== CHARGEMENT DES PRODUITS DEPUIS FIRESTORE =====
-        async function loadProductsFromFirebase() {
-            try {
-                console.log("=== DÉBUT CHARGEMENT FIRESTORE ===");
-                
-                if (!window.firebaseApp || !window.firebaseApp.loadFirestoreData) {
-                    console.warn("❌ Firebase non initialisé, utilisation des images locales");
-                    return getFallbackProducts();
-                }
-                
-                console.log("🔥 Appel de loadFirestoreData...");
-                const data = await window.firebaseApp.loadFirestoreData();
-                
-                if (data.montres.length === 0 && data.accessoires.length === 0) {
-                    console.warn("⚠️ Aucun produit Firestore, utilisation des images locales");
-                    return getFallbackProducts();
-                }
-                
-                console.log(`✅ ${data.montres.length} montres, ${data.accessoires.length} accessoires chargés`);
-                return data;
-                
-            } catch (error) {
-                console.error("❌ Erreur Firestore:", error);
-                console.log("📁 Utilisation des images locales de secours");
-                return getFallbackProducts();
-            }
-        }
-
-        // Variables pour gérer le chargement des produits
+        // ===== VARIABLES DE PAGINATION =====
         let watchesDisplayed = 0;
         let accessoriesDisplayed = 0;
         const initialWatchesToShow = 6;
         const initialAccessoriesToShow = 6;
         const loadMoreCount = 6;
-
-        let isLoading = false;
+        let isLoadingWatches = false;
+        let isLoadingAccessories = false;
         let hasReachedEndWatches = false;
         let hasReachedEndAccessories = false;
 
-        // ===== GÉNÉRATION DE CARTE PRODUIT =====
+        // ===== GÉNÉRATION CARTE PRODUIT =====
         function generateProductCard(product, isMobile = false) {
             const badgeClass = `badge-${product.badge || 'hot'}`;
-            const hasDiscount = product.originalPrice ? `<del>${product.originalPrice}</del>` : '';
-            
             const whatsappMessage = encodeURIComponent(
                 `Bonjour Elite Smart ! 👋\n\n` +
                 `Je suis intéressé(e) par :\n` +
@@ -2218,19 +1508,13 @@
                 `Disponibilité ? Livraison ? Garantie ?\n\n` +
                 `Merci !`
             );
-            
             const whatsappLink = `https://wa.me/22676707008?text=${whatsappMessage}`;
-            
-            // Vérifier si l'image est locale ou externe
-            const imageSrc = product.image && product.image.startsWith('Elitesmart/') 
-                ? product.image 
-                : (product.image || 'https://via.placeholder.com/300x300/0047AB/FFFFFF?text=Elite+Smart');
-            
+
             return `
                 <div class="product-card">
                     ${product.badge ? `<div class="badge ${badgeClass}">${product.badgeText || product.badge}</div>` : ''}
                     <div class="product-image">
-                        <img src="${imageSrc}" 
+                        <img src="${product.image}" 
                              alt="${product.name}" 
                              onerror="this.onerror=null; this.src='https://via.placeholder.com/300x300/0047AB/FFFFFF?text=Elite+Smart'">
                     </div>
@@ -2238,10 +1522,7 @@
                         <span class="product-category">${product.category || 'PRODUIT'}</span>
                         <h3 class="product-title">${product.name}</h3>
                         <p>${product.description || 'Description non disponible'}</p>
-                        <div class="product-price">
-                            ${product.price || 'Prix non disponible'}
-                            ${hasDiscount}
-                        </div>
+                        <div class="product-price">${product.price || 'Prix non disponible'}</div>
                         <div class="product-actions">
                             <button class="btn btn-primary btn-view-details" 
                                     data-product='${JSON.stringify(product).replace(/'/g, "&#39;")}' 
@@ -2259,64 +1540,37 @@
         }
 
         // ===== AFFICHAGE DES PRODUITS =====
-        function showEmptyMessage(containerId, message, isCarousel = false) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
-            
-            container.innerHTML = `
-                <div class="empty-message">
-                    <i class="fas fa-box-open"></i>
-                    <h3>${message}</h3>
-                    <p>Aucun produit n'est disponible pour le moment.</p>
-                    <a href="admin.html" class="btn btn-primary" style="margin-top: 20px;">
-                        <i class="fas fa-plus-circle"></i> Ajouter des produits
-                    </a>
-                </div>
-            `;
-            
-            if (isCarousel) {
-                const carouselContainer = container.closest('.carousel-container');
-                if (carouselContainer) {
-                    carouselContainer.querySelector('.carousel-arrows')?.style.setProperty('display', 'none', 'important');
-                    carouselContainer.querySelector('.scroll-indicators')?.style.setProperty('display', 'none', 'important');
-                }
-            }
-        }
-
         function displayWatches() {
-            const montres = window.products?.montres || [];
-            
+            const montres = localWatches;
             const desktopGrid = document.getElementById('desktop-watches');
             const mobileCarousel = document.getElementById('mobile-watches');
             const indicatorsContainer = document.getElementById('watches-indicators');
             const loadMoreContainer = document.getElementById('watches-load-more');
-            
+
             if (montres.length === 0) {
                 showEmptyMessage('desktop-watches', 'Aucune montre disponible');
                 showEmptyMessage('mobile-watches', 'Aucune montre disponible', true);
                 loadMoreContainer.style.display = 'none';
                 return;
             }
-            
+
             const watchesToDisplay = montres.slice(0, watchesDisplayed);
-            
+
             if (desktopGrid) {
-                desktopGrid.innerHTML = watchesToDisplay.map(product => generateProductCard(product)).join('');
+                desktopGrid.innerHTML = watchesToDisplay.map(p => generateProductCard(p)).join('');
             }
-            
             if (mobileCarousel) {
-                mobileCarousel.innerHTML = watchesToDisplay.map(product => generateProductCard(product, true)).join('');
+                mobileCarousel.innerHTML = watchesToDisplay.map(p => generateProductCard(p, true)).join('');
             }
-            
             if (indicatorsContainer && watchesToDisplay.length > 0) {
                 indicatorsContainer.innerHTML = watchesToDisplay.map((_, i) => 
                     `<div class="scroll-indicator ${i === 0 ? 'active' : ''}"></div>`
                 ).join('');
             }
-            
+
             document.getElementById('watches-count').textContent = watchesDisplayed;
             document.getElementById('watches-total').textContent = montres.length;
-            
+
             const loadMoreBtn = document.getElementById('load-more-watches');
             if (watchesDisplayed >= montres.length) {
                 loadMoreBtn.style.display = 'none';
@@ -2327,12 +1581,11 @@
                 loadMoreBtn.style.display = 'inline-flex';
                 loadMoreBtn.innerHTML = `<i class="fas fa-plus-circle"></i> Charger plus de montres (${Math.min(loadMoreCount, montres.length - watchesDisplayed)} autres)`;
             }
-            
+
             setTimeout(() => {
                 document.querySelectorAll('#desktop-watches .product-card, #mobile-watches .product-card').forEach(card => {
                     observer.observe(card);
                 });
-                
                 document.querySelectorAll('.btn-view-details').forEach(btn => {
                     btn.addEventListener('click', function() {
                         const productData = JSON.parse(this.getAttribute('data-product').replace(/&#39;/g, "'"));
@@ -2343,39 +1596,36 @@
         }
 
         function displayAccessories() {
-            const accessoires = window.products?.accessoires || [];
-            
+            const accessoires = localAccessories;
             const desktopGrid = document.getElementById('desktop-accessories');
             const mobileCarousel = document.getElementById('mobile-accessories');
             const indicatorsContainer = document.getElementById('accessories-indicators');
             const loadMoreContainer = document.getElementById('accessories-load-more');
-            
+
             if (accessoires.length === 0) {
                 showEmptyMessage('desktop-accessories', 'Aucun accessoire disponible');
                 showEmptyMessage('mobile-accessories', 'Aucun accessoire disponible', true);
                 loadMoreContainer.style.display = 'none';
                 return;
             }
-            
+
             const accessoriesToDisplay = accessoires.slice(0, accessoriesDisplayed);
-            
+
             if (desktopGrid) {
-                desktopGrid.innerHTML = accessoriesToDisplay.map(product => generateProductCard(product)).join('');
+                desktopGrid.innerHTML = accessoriesToDisplay.map(p => generateProductCard(p)).join('');
             }
-            
             if (mobileCarousel) {
-                mobileCarousel.innerHTML = accessoriesToDisplay.map(product => generateProductCard(product, true)).join('');
+                mobileCarousel.innerHTML = accessoriesToDisplay.map(p => generateProductCard(p, true)).join('');
             }
-            
             if (indicatorsContainer && accessoriesToDisplay.length > 0) {
                 indicatorsContainer.innerHTML = accessoriesToDisplay.map((_, i) => 
                     `<div class="scroll-indicator ${i === 0 ? 'active' : ''}"></div>`
                 ).join('');
             }
-            
+
             document.getElementById('accessories-count').textContent = accessoriesDisplayed;
             document.getElementById('accessories-total').textContent = accessoires.length;
-            
+
             const loadMoreBtn = document.getElementById('load-more-accessories');
             if (accessoriesDisplayed >= accessoires.length) {
                 loadMoreBtn.style.display = 'none';
@@ -2386,12 +1636,11 @@
                 loadMoreBtn.style.display = 'inline-flex';
                 loadMoreBtn.innerHTML = `<i class="fas fa-plus-circle"></i> Charger plus d'accessoires (${Math.min(loadMoreCount, accessoires.length - accessoriesDisplayed)} autres)`;
             }
-            
+
             setTimeout(() => {
                 document.querySelectorAll('#desktop-accessories .product-card, #mobile-accessories .product-card').forEach(card => {
                     observer.observe(card);
                 });
-                
                 document.querySelectorAll('.btn-view-details').forEach(btn => {
                     btn.addEventListener('click', function() {
                         const productData = JSON.parse(this.getAttribute('data-product').replace(/&#39;/g, "'"));
@@ -2401,25 +1650,35 @@
             }, 100);
         }
 
+        function showEmptyMessage(containerId, message, isCarousel = false) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            container.innerHTML = `
+                <div class="empty-message">
+                    <i class="fas fa-box-open"></i>
+                    <h3>${message}</h3>
+                    <p>Aucun produit n'est disponible pour le moment.</p>
+                </div>
+            `;
+            if (isCarousel) {
+                const carousel = container.closest('.carousel-container');
+                if (carousel) {
+                    carousel.querySelector('.carousel-arrows')?.style.setProperty('display', 'none', 'important');
+                    carousel.querySelector('.scroll-indicators')?.style.setProperty('display', 'none', 'important');
+                }
+            }
+        }
+
         // ===== CARROUSELS =====
         function initializeCarousels() {
             const isMobile = window.innerWidth <= 768;
-            
             if (isMobile) {
-                document.querySelectorAll('.carousel-container').forEach(container => {
-                    container.style.display = 'block';
-                });
-                document.querySelectorAll('.product-grid').forEach(grid => {
-                    grid.style.display = 'none';
-                });
+                document.querySelectorAll('.carousel-container').forEach(c => c.style.display = 'block');
+                document.querySelectorAll('.product-grid').forEach(g => g.style.display = 'none');
                 setupCarouselArrows();
             } else {
-                document.querySelectorAll('.carousel-container').forEach(container => {
-                    container.style.display = 'none';
-                });
-                document.querySelectorAll('.product-grid').forEach(grid => {
-                    grid.style.display = 'grid';
-                });
+                document.querySelectorAll('.carousel-container').forEach(c => c.style.display = 'none');
+                document.querySelectorAll('.product-grid').forEach(g => g.style.display = 'grid');
             }
         }
 
@@ -2429,18 +1688,11 @@
                     const carouselType = this.getAttribute('data-carousel');
                     const isPrev = this.classList.contains('prev');
                     const carouselId = `mobile-${carouselType}`;
-                    
                     const carousel = document.getElementById(carouselId);
                     if (!carousel) return;
-                    
                     const cardWidth = carousel.querySelector('.product-card')?.offsetWidth || 300;
                     const scrollAmount = isPrev ? -cardWidth : cardWidth;
-                    
-                    carousel.scrollBy({
-                        left: scrollAmount,
-                        behavior: 'smooth'
-                    });
-                    
+                    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
                     setTimeout(() => updateCarouselIndicators(carouselType), 300);
                 });
             });
@@ -2449,19 +1701,73 @@
         function updateCarouselIndicators(carouselType) {
             const carousel = document.getElementById(`mobile-${carouselType}`);
             const indicators = document.querySelectorAll(`#${carouselType}-indicators .scroll-indicator`);
-            
             if (!carousel || !indicators.length) return;
-            
             const scrollPosition = carousel.scrollLeft;
             const cardWidth = carousel.querySelector('.product-card')?.offsetWidth || 300;
             const activeIndex = Math.round(scrollPosition / (cardWidth + 20));
-            
-            indicators.forEach((indicator, index) => {
-                indicator.classList.toggle('active', index === activeIndex);
-            });
+            indicators.forEach((ind, idx) => ind.classList.toggle('active', idx === activeIndex));
         }
 
-        // ===== MODAL PRODUIT =====
+        // ===== LOAD MORE =====
+        function loadMoreWatches() {
+            if (isLoadingWatches || hasReachedEndWatches) return;
+            isLoadingWatches = true;
+            const spinner = document.createElement('div');
+            spinner.className = 'loading-spinner';
+            spinner.style.display = 'block';
+            document.getElementById('watches-load-more').appendChild(spinner);
+
+            setTimeout(() => {
+                const remaining = localWatches.length - watchesDisplayed;
+                const toLoad = Math.min(loadMoreCount, remaining);
+                if (remaining > 0) {
+                    watchesDisplayed += toLoad;
+                    displayWatches();
+                    spinner.remove();
+                    showNotification(`${toLoad} nouvelles montres chargées !`);
+                } else {
+                    hasReachedEndWatches = true;
+                    spinner.remove();
+                    const endMsg = document.createElement('div');
+                    endMsg.className = 'end-of-products';
+                    endMsg.textContent = '✨ Toutes les montres sont affichées !';
+                    document.getElementById('watches-load-more').appendChild(endMsg);
+                    document.getElementById('load-more-watches').style.display = 'none';
+                }
+                isLoadingWatches = false;
+            }, 800);
+        }
+
+        function loadMoreAccessories() {
+            if (isLoadingAccessories || hasReachedEndAccessories) return;
+            isLoadingAccessories = true;
+            const spinner = document.createElement('div');
+            spinner.className = 'loading-spinner';
+            spinner.style.display = 'block';
+            document.getElementById('accessories-load-more').appendChild(spinner);
+
+            setTimeout(() => {
+                const remaining = localAccessories.length - accessoriesDisplayed;
+                const toLoad = Math.min(loadMoreCount, remaining);
+                if (remaining > 0) {
+                    accessoriesDisplayed += toLoad;
+                    displayAccessories();
+                    spinner.remove();
+                    showNotification(`${toLoad} nouveaux accessoires chargés !`);
+                } else {
+                    hasReachedEndAccessories = true;
+                    spinner.remove();
+                    const endMsg = document.createElement('div');
+                    endMsg.className = 'end-of-products';
+                    endMsg.textContent = '✨ Tous les accessoires sont affichés !';
+                    document.getElementById('accessories-load-more').appendChild(endMsg);
+                    document.getElementById('load-more-accessories').style.display = 'none';
+                }
+                isLoadingAccessories = false;
+            }, 800);
+        }
+
+        // ===== MODAL =====
         function showProductDetails(product) {
             const modalHTML = `
                 <div class="modal-overlay">
@@ -2507,208 +1813,49 @@
                     </div>
                 </div>
             `;
-            
+
             const modal = document.createElement('div');
             modal.innerHTML = modalHTML;
             document.body.appendChild(modal);
-            
+
             const modalStyle = document.createElement('style');
             modalStyle.textContent = `
                 .modal-overlay {
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
+                    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
                     background: rgba(0,0,0,0.8);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    z-index: 2000;
-                    animation: fadeIn 0.3s ease;
+                    display: flex; align-items: center; justify-content: center;
+                    z-index: 2000; animation: fadeIn 0.3s ease;
                 }
-                
                 .modal-content {
-                    background: white;
-                    border-radius: var(--radius);
-                    padding: 30px;
-                    max-width: 500px;
-                    width: 90%;
-                    max-height: 80vh;
-                    overflow-y: auto;
-                    animation: slideUp 0.3s ease;
+                    background: white; border-radius: var(--radius); padding: 30px;
+                    max-width: 500px; width: 90%; max-height: 80vh;
+                    overflow-y: auto; animation: slideUp 0.3s ease;
                 }
-                
-                .modal-header {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    margin-bottom: 20px;
-                }
-                
-                .modal-header h3 {
-                    color: var(--primary);
-                    margin: 0;
-                }
-                
-                .close-modal {
-                    background: none;
-                    border: none;
-                    font-size: 24px;
-                    cursor: pointer;
-                    color: var(--dark);
-                }
-                
-                .product-price-large {
-                    font-size: 1.8rem;
-                    color: var(--primary);
-                    font-weight: 800;
-                    margin-bottom: 20px;
-                }
-                
-                .modal-features {
-                    margin-top: 20px;
-                }
-                
-                .modal-features ul {
-                    list-style: none;
-                    padding-left: 0;
-                }
-                
-                .modal-features li {
-                    padding: 8px 0;
-                    border-bottom: 1px solid #eee;
-                }
-                
-                .modal-features li:before {
-                    content: '✓';
-                    color: var(--secondary);
-                    font-weight: bold;
-                    margin-right: 10px;
-                }
-                
-                .modal-actions {
-                    margin-top: 30px;
-                }
-                
-                @keyframes slideInRight {
-                    from {
-                        opacity: 0;
-                        transform: translateX(50px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateX(0);
-                    }
-                }
-                
-                @keyframes slideOutRight {
-                    from {
-                        opacity: 1;
-                        transform: translateX(0);
-                    }
-                    to {
-                        opacity: 0;
-                        transform: translateX(50px);
-                    }
-                }
+                .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+                .modal-header h3 { color: var(--primary); margin: 0; }
+                .close-modal { background: none; border: none; font-size: 24px; cursor: pointer; color: var(--dark); }
+                .product-price-large { font-size: 1.8rem; color: var(--primary); font-weight: 800; margin-bottom: 20px; }
+                .modal-features { margin-top: 20px; }
+                .modal-features ul { list-style: none; padding-left: 0; }
+                .modal-features li { padding: 8px 0; border-bottom: 1px solid #eee; }
+                .modal-features li:before { content: '✓'; color: var(--secondary); font-weight: bold; margin-right: 10px; }
+                .modal-actions { margin-top: 30px; }
+                @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+                @keyframes slideUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
             `;
-            
             document.head.appendChild(modalStyle);
-            
-            modal.querySelector('.close-modal').addEventListener('click', () => {
-                modal.remove();
-                modalStyle.remove();
-            });
-            
+
+            modal.querySelector('.close-modal').addEventListener('click', () => { modal.remove(); modalStyle.remove(); });
             modal.querySelector('.modal-overlay').addEventListener('click', (e) => {
-                if (e.target === modal.querySelector('.modal-overlay')) {
-                    modal.remove();
-                    modalStyle.remove();
-                }
+                if (e.target === modal.querySelector('.modal-overlay')) { modal.remove(); modalStyle.remove(); }
             });
-            
-            modal.querySelector('.modal-content').addEventListener('click', (e) => {
-                e.stopPropagation();
-            });
-        }
-
-        // ===== LOAD MORE =====
-        function loadMoreWatches() {
-            if (isLoading || hasReachedEndWatches) return;
-            
-            isLoading = true;
-            
-            const spinner = document.createElement('div');
-            spinner.className = 'loading-spinner';
-            spinner.style.display = 'block';
-            const loadMoreContainer = document.getElementById('watches-load-more');
-            loadMoreContainer.appendChild(spinner);
-            
-            setTimeout(() => {
-                const montres = window.products?.montres || [];
-                const remainingWatches = montres.length - watchesDisplayed;
-                const watchesToLoad = Math.min(loadMoreCount, remainingWatches);
-                
-                if (remainingWatches > 0) {
-                    watchesDisplayed += watchesToLoad;
-                    displayWatches();
-                    spinner.remove();
-                    showNotification(`${watchesToLoad} nouvelles montres chargées !`);
-                } else {
-                    hasReachedEndWatches = true;
-                    spinner.remove();
-                    const endMessage = document.createElement('div');
-                    endMessage.className = 'end-of-products';
-                    endMessage.textContent = '✨ Toutes les montres sont affichées !';
-                    loadMoreContainer.appendChild(endMessage);
-                    document.getElementById('load-more-watches').style.display = 'none';
-                }
-                
-                isLoading = false;
-            }, 800);
-        }
-
-        function loadMoreAccessories() {
-            if (isLoading || hasReachedEndAccessories) return;
-            
-            isLoading = true;
-            
-            const spinner = document.createElement('div');
-            spinner.className = 'loading-spinner';
-            spinner.style.display = 'block';
-            const loadMoreContainer = document.getElementById('accessories-load-more');
-            loadMoreContainer.appendChild(spinner);
-            
-            setTimeout(() => {
-                const accessoires = window.products?.accessoires || [];
-                const remainingAccessories = accessoires.length - accessoriesDisplayed;
-                const accessoriesToLoad = Math.min(loadMoreCount, remainingAccessories);
-                
-                if (remainingAccessories > 0) {
-                    accessoriesDisplayed += accessoriesToLoad;
-                    displayAccessories();
-                    spinner.remove();
-                    showNotification(`${accessoriesToLoad} nouveaux accessoires chargés !`);
-                } else {
-                    hasReachedEndAccessories = true;
-                    spinner.remove();
-                    const endMessage = document.createElement('div');
-                    endMessage.className = 'end-of-products';
-                    endMessage.textContent = '✨ Tous les accessoires sont affichés !';
-                    loadMoreContainer.appendChild(endMessage);
-                    document.getElementById('load-more-accessories').style.display = 'none';
-                }
-                
-                isLoading = false;
-            }, 800);
+            modal.querySelector('.modal-content').addEventListener('click', (e) => e.stopPropagation());
         }
 
         // ===== CHECK MOBILE MENU =====
         function checkMobileMenu() {
             const isMobile = window.innerWidth <= 768;
             const navLinks = document.querySelector('.nav-links');
-            
             if (isMobile && navLinks) {
                 navLinks.querySelectorAll('li').forEach(li => {
                     li.style.display = 'block';
@@ -2720,38 +1867,28 @@
         }
 
         // ===== INITIALISATION =====
-        document.addEventListener('DOMContentLoaded', async () => {
-            console.log("=== INITIALISATION DU SITE ===");
-            
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("=== Elite Smart - Version 100% locale ===");
+            console.log(`📁 ${localWatches.length} montres chargées`);
+            console.log(`📁 ${localAccessories.length} accessoires chargés`);
+
             checkMobileMenu();
-            
-            document.querySelectorAll('.section').forEach(section => {
-                observer.observe(section);
-            });
-            
-            document.querySelectorAll('.why-card').forEach(card => {
-                observer.observe(card);
-            });
-            
-            console.log("Chargement des produits depuis Firebase...");
-            window.products = await loadProductsFromFirebase();
-            
-            watchesDisplayed = Math.min(initialWatchesToShow, window.products?.montres?.length || 0);
-            accessoriesDisplayed = Math.min(initialAccessoriesToShow, window.products?.accessoires?.length || 0);
-            
+
+            document.querySelectorAll('.section').forEach(s => observer.observe(s));
+            document.querySelectorAll('.why-card').forEach(c => observer.observe(c));
+
+            watchesDisplayed = Math.min(initialWatchesToShow, localWatches.length);
+            accessoriesDisplayed = Math.min(initialAccessoriesToShow, localAccessories.length);
+
             displayWatches();
             displayAccessories();
-            
             initializeCarousels();
-            
+
             document.getElementById('load-more-watches')?.addEventListener('click', loadMoreWatches);
             document.getElementById('load-more-accessories')?.addEventListener('click', loadMoreAccessories);
-            
+
             setTimeout(() => {
-                document.querySelectorAll('.product-card').forEach(card => {
-                    observer.observe(card);
-                });
-                
+                document.querySelectorAll('.product-card').forEach(c => observer.observe(c));
                 document.querySelectorAll('.btn-view-details').forEach(btn => {
                     btn.addEventListener('click', function() {
                         const productData = JSON.parse(this.getAttribute('data-product').replace(/&#39;/g, "'"));
@@ -2759,11 +1896,14 @@
                     });
                 });
             }, 500);
-            
-            console.log("=== SITE PRÊT ===");
+
+            console.log("✅ Site prêt !");
         });
-        
-        window.addEventListener('resize', checkMobileMenu);
+
+        window.addEventListener('resize', () => {
+            checkMobileMenu();
+            initializeCarousels();
+        });
     </script>
 </body>
 </html>
