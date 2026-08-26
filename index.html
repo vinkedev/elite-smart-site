@@ -9,8 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* ===== TOUT LE CSS EST IDENTIQUE À TON ORIGINAL ===== */
-        /* Je garde ton CSS exactement comme il était */
+        /* ===== VARIABLES (inchangé) ===== */
         :root {
             --primary: #0047AB;
             --primary-dark: #003788;
@@ -715,86 +714,19 @@
             animation: none;
         }
 
-        /* ===== CARROUSEL MOBILE ===== */
-        .carousel-container {
-            display: none;
-            position: relative;
-            overflow: hidden;
+        /* ===== MESSAGES VIDES ===== */
+        .empty-message {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--gray);
+            font-size: 1.2rem;
+            background: rgba(255,255,255,0.5);
+            border-radius: var(--radius);
+            grid-column: 1 / -1;
         }
-        .carousel-wrapper {
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-            padding-bottom: 20px;
-            scrollbar-width: none;
-        }
-        .carousel-wrapper::-webkit-scrollbar { display: none; }
-        .carousel-wrapper .product-card {
-            flex: 0 0 calc(85vw - 40px);
-            min-width: calc(85vw - 40px);
-            scroll-snap-align: start;
-        }
-        .scroll-indicators {
-            display: none;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 20px;
-        }
-        .scroll-indicator {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: rgba(0, 71, 171, 0.3);
-            transition: var(--transition);
-        }
-        .scroll-indicator.active {
-            background-color: var(--primary);
-            transform: scale(1.3);
-        }
-        .carousel-arrows {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            transform: translateY(-50%);
-            display: flex;
-            justify-content: space-between;
-            padding: 0 10px;
-            z-index: 10;
-            pointer-events: none;
-        }
-        .carousel-arrow {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            transition: var(--transition);
-            pointer-events: all;
-            font-size: 18px;
-            color: var(--primary);
-        }
-        .carousel-arrow:hover {
-            background: white;
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
-        .carousel-arrow.prev { margin-left: -20px; }
-        .carousel-arrow.next { margin-right: -20px; }
+        .empty-message i { font-size: 50px; margin-bottom: 20px; color: var(--primary); opacity: 0.5; }
 
-        /* ===== ACCESSOIRES ===== */
-        .accessories {
-            background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
-        }
-
-        /* ===== STYLES POUR LE MODAL ===== */
+        /* ===== MODAL ===== */
         .product-detail {
             background: #f8f9fa;
             padding: 20px;
@@ -823,17 +755,6 @@
         .whatsapp-contact i { font-size: 24px; color: #25D366; }
         .whatsapp-contact p { color: white; margin: 0; }
         .modal-actions { display: flex; gap: 15px; margin-top: 30px; }
-
-        .empty-message {
-            text-align: center;
-            padding: 60px 20px;
-            color: var(--gray);
-            font-size: 1.2rem;
-            background: rgba(255,255,255,0.5);
-            border-radius: var(--radius);
-            grid-column: 1 / -1;
-        }
-        .empty-message i { font-size: 50px; margin-bottom: 20px; color: var(--primary); opacity: 0.5; }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1200px) {
@@ -930,81 +851,57 @@
             .hero-buttons { flex-direction: column; align-items: center; gap: 15px; }
             .btn { width: 100%; max-width: 300px; }
             .section { padding: 60px 0; }
-            .product-grid, .category-grid { display: none; }
-            .carousel-container { display: block; }
-            .scroll-indicators { display: flex; }
-            .carousel-arrows { display: flex; }
-            .carousel-wrapper .product-card {
-                flex: 0 0 calc(80vw - 30px) !important;
-                min-width: calc(80vw - 30px) !important;
-                height: auto !important;
+
+            /* === MODIFICATION : GRID SUR MOBILE, PLUS DE CARROUSEL === */
+            .product-grid {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 15px !important;
             }
-            .product-image { height: 350px !important; padding: 15px !important; }
-            .product-content { padding: 15px !important; }
-            .product-title { font-size: 1.15rem !important; line-height: 1.3 !important; margin-bottom: 6px !important; }
+            .product-image { height: 200px !important; padding: 10px !important; }
+            .product-content { padding: 12px !important; }
+            .product-title { font-size: 1rem !important; margin-bottom: 4px !important; }
             .product-content p {
-                font-size: 0.9rem !important;
-                line-height: 1.4 !important;
-                margin-bottom: 10px !important;
+                font-size: 0.8rem !important;
+                line-height: 1.3 !important;
+                margin-bottom: 6px !important;
                 display: -webkit-box;
                 -webkit-line-clamp: 2;
                 -webkit-box-orient: vertical;
                 overflow: hidden;
             }
-            .product-price { font-size: 1.3rem !important; margin-bottom: 8px !important; }
+            .product-price { font-size: 1.1rem !important; margin-bottom: 6px !important; }
             .product-actions {
                 grid-template-columns: 1fr !important;
-                gap: 8px !important;
-                margin-top: 10px !important;
+                gap: 6px !important;
+                margin-top: 6px !important;
             }
             .product-actions .btn {
-                padding: 10px 12px !important;
-                font-size: 13px !important;
+                padding: 8px 10px !important;
+                font-size: 11px !important;
                 width: 100% !important;
-                min-height: 40px;
-                border-radius: 8px !important;
-                font-weight: 600;
-                letter-spacing: 0.3px;
+                min-height: 34px;
+                border-radius: 6px !important;
             }
-            .product-actions .btn-primary {
-                background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
-            }
-            .product-actions .btn-whatsapp {
-                background: linear-gradient(135deg, #25D366, #128C7E);
-            }
-            .product-actions .btn:active { transform: scale(0.98); }
             .badge {
-                font-size: 0.7rem !important;
-                padding: 4px 10px !important;
-                top: 10px !important;
-                left: 10px !important;
+                font-size: 0.6rem !important;
+                padding: 3px 8px !important;
+                top: 8px !important;
+                left: 8px !important;
             }
             .load-more-container { display: block !important; }
-        }
-        @media (min-width: 481px) and (max-width: 768px) {
-            .product-image { height: 380px !important; }
-            .carousel-wrapper .product-card {
-                flex: 0 0 calc(75vw - 30px) !important;
-                min-width: calc(75vw - 30px) !important;
-            }
         }
         @media (max-width: 480px) {
             .hero h1 { font-size: 1.6rem !important; }
             .hero-subtitle { font-size: 1rem !important; }
             #typing { font-size: 1rem !important; min-height: 30px; }
             h2 { font-size: 1.8rem !important; }
-            .carousel-wrapper .product-card {
-                flex: 0 0 calc(85vw - 20px) !important;
-                min-width: calc(85vw - 20px) !important;
-            }
-            .product-image { height: 320px !important; }
-            .product-title { font-size: 1.1rem !important; }
-            .product-price { font-size: 1.2rem !important; }
-            .product-actions .btn { padding: 9px 12px !important; font-size: 12px !important; }
+            .product-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+            .product-image { height: 160px !important; }
+            .product-title { font-size: 0.9rem !important; }
+            .product-price { font-size: 1rem !important; }
+            .product-actions .btn { font-size: 10px !important; padding: 6px 8px !important; min-height: 30px; }
             .logo-text h1 { font-size: 1.2rem !important; }
-            .carousel-arrow { width: 35px; height: 35px; font-size: 16px; }
-            .carousel-arrow.prev { margin-left: -15px; }
-            .carousel-arrow.next { margin-right: -15px; }
         }
     </style>
 </head>
@@ -1018,11 +915,7 @@
                     <h1><span class="elite">Elite</span> <span class="smart">Smart</span></h1>
                 </div>
             </div>
-
-            <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
-
+            <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#accueil">Accueil</a></li>
@@ -1053,7 +946,7 @@
         </div>
     </section>
 
-    <!-- PRODUITS (MOTRES) -->
+    <!-- PRODUITS (MONTRES) -->
     <section class="section products" id="produits">
         <div class="container">
             <div class="section-header">
@@ -1061,17 +954,10 @@
                 <p>Découvrez nos best-sellers du moment</p>
             </div>
 
+            <!-- Grille de montres (unique, utilisée sur tous les écrans) -->
             <div class="product-grid" id="desktop-watches"></div>
 
-            <div class="carousel-container">
-                <div class="carousel-wrapper" id="mobile-watches"></div>
-                <div class="carousel-arrows">
-                    <div class="carousel-arrow prev" data-carousel="watches"><i class="fas fa-chevron-left"></i></div>
-                    <div class="carousel-arrow next" data-carousel="watches"><i class="fas fa-chevron-right"></i></div>
-                </div>
-                <div class="scroll-indicators" id="watches-indicators"></div>
-            </div>
-
+            <!-- Bouton Charger plus -->
             <div class="load-more-container" id="watches-load-more">
                 <button class="btn btn-dark" id="load-more-watches">
                     <i class="fas fa-plus-circle"></i> Charger plus de montres
@@ -1123,17 +1009,10 @@
                 <p>Complétez votre expérience avec nos accessoires high-tech</p>
             </div>
 
+            <!-- Grille d'accessoires (unique) -->
             <div class="product-grid" id="desktop-accessories"></div>
 
-            <div class="carousel-container">
-                <div class="carousel-wrapper" id="mobile-accessories"></div>
-                <div class="carousel-arrows">
-                    <div class="carousel-arrow prev" data-carousel="accessories"><i class="fas fa-chevron-left"></i></div>
-                    <div class="carousel-arrow next" data-carousel="accessories"><i class="fas fa-chevron-right"></i></div>
-                </div>
-                <div class="scroll-indicators" id="accessories-indicators"></div>
-            </div>
-
+            <!-- Bouton Charger plus -->
             <div class="load-more-container" id="accessories-load-more">
                 <button class="btn btn-dark" id="load-more-accessories">
                     <i class="fas fa-plus-circle"></i> Charger plus d'accessoires
@@ -1314,11 +1193,9 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- ===== JAVASCRIPT UNIQUEMENT LOCAL ===== -->
+    <!-- ===== JAVASCRIPT 100% LOCAL ===== -->
     <script>
-        // ===== PRODUITS LOCAUX UNIQUEMENT =====
-        // TOUS LES PRODUITS SONT DÉFINIS ICI AVEC TES IMAGES LOCALES
-
+        // ===== PRODUITS =====
         const localWatches = [
             { id: 1, name: "Montre Elite 1", price: "15.000 FCFA", description: "Montre connectée haut de gamme avec écran AMOLED", category: "MONTRE CONNECTÉE", image: "Elitesmart/montre1.jpg", badge: "new", badgeText: "NOUVEAU", detail: "Écran AMOLED 1.78\", GPS intégré, moniteur de fréquence cardiaque, résistance à l'eau 5ATM, autonomie 7 jours" },
             { id: 2, name: "Montre Elite 2", price: "16.500 FCFA", description: "Montre sportive avec GPS et suivi d'activités", category: "MONTRE SPORT", image: "Elitesmart/montre2.jpg", badge: "hot", badgeText: "BEST SELLER", detail: "GPS intégré, 20 modes sport, résistance à l'eau, écran tactile" },
@@ -1365,8 +1242,17 @@
             { id: "a11", name: "Accessoire Elite 11", price: "7.800 FCFA", description: "Accessoire design scandinave", category: "ACCESSOIRE", image: "Elitesmart/Accessoire11.jpg", badge: "promo", badgeText: "PROMO", detail: "Design scandinave, minimaliste, écologique" }
         ];
 
-        // ===== TOUT LE RESTE DU JS =====
-        // (machine à écrire, menu mobile, observer, notifications, chargement des produits, etc.)
+        // ===== CONFIGURATION PAGINATION =====
+        const INITIAL_WATCHES = 11;    // 11 montres au départ
+        const INITIAL_ACCESSORIES = 3; // 3 accessoires au départ
+        const LOAD_MORE_COUNT = 6;
+
+        let watchesDisplayed = 0;
+        let accessoriesDisplayed = 0;
+        let isLoadingWatches = false;
+        let isLoadingAccessories = false;
+        let hasReachedEndWatches = false;
+        let hasReachedEndAccessories = false;
 
         // ===== EFFET MACHINE À ÉCRIRE =====
         const texts = [
@@ -1421,13 +1307,8 @@
         // ===== HEADER SCROLL =====
         window.addEventListener('scroll', () => {
             const header = document.querySelector('.main-header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = 'var(--shadow)';
-            }
+            header.style.background = window.scrollY > 100 ? 'rgba(255, 255, 255, 0.98)' : 'rgba(255, 255, 255, 0.98)';
+            header.style.boxShadow = window.scrollY > 100 ? '0 8px 30px rgba(0, 0, 0, 0.1)' : 'var(--shadow)';
         });
 
         // ===== CONTACT FORM =====
@@ -1446,23 +1327,17 @@
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     const headerHeight = document.querySelector('.main-header').offsetHeight;
-                    window.scrollTo({
-                        top: targetElement.offsetTop - headerHeight,
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: targetElement.offsetTop - headerHeight, behavior: 'smooth' });
                 }
             });
         });
 
         // ===== INTERSECTION OBSERVER =====
-        const observerOptions = { root: null, rootMargin: '-50px 0px -100px 0px', threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
-        }, observerOptions);
+        }, { root: null, rootMargin: '-50px 0px -100px 0px', threshold: 0.1 });
 
         // ===== NOTIFICATION =====
         function showNotification(message, type = "success") {
@@ -1484,18 +1359,7 @@
             }, 3000);
         }
 
-        // ===== VARIABLES DE PAGINATION =====
-        let watchesDisplayed = 0;
-        let accessoriesDisplayed = 0;
-        const initialWatchesToShow = 6;
-        const initialAccessoriesToShow = 6;
-        const loadMoreCount = 6;
-        let isLoadingWatches = false;
-        let isLoadingAccessories = false;
-        let hasReachedEndWatches = false;
-        let hasReachedEndAccessories = false;
-
-        // ===== GÉNÉRATION CARTE PRODUIT =====
+        // ===== GÉNÉRATION CARTE =====
         function generateProductCard(product, isMobile = false) {
             const badgeClass = `badge-${product.badge || 'hot'}`;
             const whatsappMessage = encodeURIComponent(
@@ -1514,9 +1378,7 @@
                 <div class="product-card">
                     ${product.badge ? `<div class="badge ${badgeClass}">${product.badgeText || product.badge}</div>` : ''}
                     <div class="product-image">
-                        <img src="${product.image}" 
-                             alt="${product.name}" 
-                             onerror="this.onerror=null; this.src='https://via.placeholder.com/300x300/0047AB/FFFFFF?text=Elite+Smart'">
+                        <img src="${product.image}" alt="${product.name}" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x300/0047AB/FFFFFF?text=Elite+Smart'">
                     </div>
                     <div class="product-content">
                         <span class="product-category">${product.category || 'PRODUIT'}</span>
@@ -1526,11 +1388,11 @@
                         <div class="product-actions">
                             <button class="btn btn-primary btn-view-details" 
                                     data-product='${JSON.stringify(product).replace(/'/g, "&#39;")}' 
-                                    style="padding: ${isMobile ? '10px 12px' : '12px 20px'}; font-size: ${isMobile ? '13px' : '14px'}">
+                                    style="padding: ${isMobile ? '8px 10px' : '12px 20px'}; font-size: ${isMobile ? '11px' : '14px'}">
                                 <i class="fas fa-eye"></i> Détails
                             </button>
                             <a href="${whatsappLink}" class="btn btn-whatsapp" target="_blank" 
-                               style="padding: ${isMobile ? '10px 12px' : '12px 20px'}; font-size: ${isMobile ? '13px' : '14px'}">
+                               style="padding: ${isMobile ? '8px 10px' : '12px 20px'}; font-size: ${isMobile ? '11px' : '14px'}">
                                 <i class="fab fa-whatsapp"></i> Commander
                             </a>
                         </div>
@@ -1541,171 +1403,90 @@
 
         // ===== AFFICHAGE DES PRODUITS =====
         function displayWatches() {
-            const montres = localWatches;
-            const desktopGrid = document.getElementById('desktop-watches');
-            const mobileCarousel = document.getElementById('mobile-watches');
-            const indicatorsContainer = document.getElementById('watches-indicators');
-            const loadMoreContainer = document.getElementById('watches-load-more');
+            const grid = document.getElementById('desktop-watches');
+            const countSpan = document.getElementById('watches-count');
+            const totalSpan = document.getElementById('watches-total');
+            const loadMoreBtn = document.getElementById('load-more-watches');
+            const container = document.getElementById('watches-load-more');
 
-            if (montres.length === 0) {
-                showEmptyMessage('desktop-watches', 'Aucune montre disponible');
-                showEmptyMessage('mobile-watches', 'Aucune montre disponible', true);
-                loadMoreContainer.style.display = 'none';
+            if (localWatches.length === 0) {
+                grid.innerHTML = `<div class="empty-message"><i class="fas fa-box-open"></i><h3>Aucune montre disponible</h3></div>`;
+                container.style.display = 'none';
                 return;
             }
 
-            const watchesToDisplay = montres.slice(0, watchesDisplayed);
+            const toShow = localWatches.slice(0, watchesDisplayed);
+            grid.innerHTML = toShow.map(p => generateProductCard(p)).join('');
 
-            if (desktopGrid) {
-                desktopGrid.innerHTML = watchesToDisplay.map(p => generateProductCard(p)).join('');
-            }
-            if (mobileCarousel) {
-                mobileCarousel.innerHTML = watchesToDisplay.map(p => generateProductCard(p, true)).join('');
-            }
-            if (indicatorsContainer && watchesToDisplay.length > 0) {
-                indicatorsContainer.innerHTML = watchesToDisplay.map((_, i) => 
-                    `<div class="scroll-indicator ${i === 0 ? 'active' : ''}"></div>`
-                ).join('');
-            }
+            countSpan.textContent = watchesDisplayed;
+            totalSpan.textContent = localWatches.length;
 
-            document.getElementById('watches-count').textContent = watchesDisplayed;
-            document.getElementById('watches-total').textContent = montres.length;
-
-            const loadMoreBtn = document.getElementById('load-more-watches');
-            if (watchesDisplayed >= montres.length) {
+            if (watchesDisplayed >= localWatches.length) {
                 loadMoreBtn.style.display = 'none';
-                if (!document.querySelector('#watches-load-more .end-of-products')) {
-                    loadMoreBtn.parentElement.innerHTML += '<div class="end-of-products">✨ Toutes les montres sont affichées !</div>';
+                if (!container.querySelector('.end-of-products')) {
+                    const end = document.createElement('div');
+                    end.className = 'end-of-products';
+                    end.textContent = '✨ Toutes les montres sont affichées !';
+                    container.appendChild(end);
                 }
             } else {
                 loadMoreBtn.style.display = 'inline-flex';
-                loadMoreBtn.innerHTML = `<i class="fas fa-plus-circle"></i> Charger plus de montres (${Math.min(loadMoreCount, montres.length - watchesDisplayed)} autres)`;
+                loadMoreBtn.innerHTML = `<i class="fas fa-plus-circle"></i> Charger plus de montres (${Math.min(LOAD_MORE_COUNT, localWatches.length - watchesDisplayed)} autres)`;
             }
 
+            // Observer + événements
             setTimeout(() => {
-                document.querySelectorAll('#desktop-watches .product-card, #mobile-watches .product-card').forEach(card => {
-                    observer.observe(card);
-                });
-                document.querySelectorAll('.btn-view-details').forEach(btn => {
+                grid.querySelectorAll('.product-card').forEach(c => observer.observe(c));
+                grid.querySelectorAll('.btn-view-details').forEach(btn => {
                     btn.addEventListener('click', function() {
-                        const productData = JSON.parse(this.getAttribute('data-product').replace(/&#39;/g, "'"));
-                        showProductDetails(productData);
+                        const data = JSON.parse(this.dataset.product.replace(/&#39;/g, "'"));
+                        showProductDetails(data);
                     });
                 });
             }, 100);
         }
 
         function displayAccessories() {
-            const accessoires = localAccessories;
-            const desktopGrid = document.getElementById('desktop-accessories');
-            const mobileCarousel = document.getElementById('mobile-accessories');
-            const indicatorsContainer = document.getElementById('accessories-indicators');
-            const loadMoreContainer = document.getElementById('accessories-load-more');
+            const grid = document.getElementById('desktop-accessories');
+            const countSpan = document.getElementById('accessories-count');
+            const totalSpan = document.getElementById('accessories-total');
+            const loadMoreBtn = document.getElementById('load-more-accessories');
+            const container = document.getElementById('accessories-load-more');
 
-            if (accessoires.length === 0) {
-                showEmptyMessage('desktop-accessories', 'Aucun accessoire disponible');
-                showEmptyMessage('mobile-accessories', 'Aucun accessoire disponible', true);
-                loadMoreContainer.style.display = 'none';
+            if (localAccessories.length === 0) {
+                grid.innerHTML = `<div class="empty-message"><i class="fas fa-box-open"></i><h3>Aucun accessoire disponible</h3></div>`;
+                container.style.display = 'none';
                 return;
             }
 
-            const accessoriesToDisplay = accessoires.slice(0, accessoriesDisplayed);
+            const toShow = localAccessories.slice(0, accessoriesDisplayed);
+            grid.innerHTML = toShow.map(p => generateProductCard(p)).join('');
 
-            if (desktopGrid) {
-                desktopGrid.innerHTML = accessoriesToDisplay.map(p => generateProductCard(p)).join('');
-            }
-            if (mobileCarousel) {
-                mobileCarousel.innerHTML = accessoriesToDisplay.map(p => generateProductCard(p, true)).join('');
-            }
-            if (indicatorsContainer && accessoriesToDisplay.length > 0) {
-                indicatorsContainer.innerHTML = accessoriesToDisplay.map((_, i) => 
-                    `<div class="scroll-indicator ${i === 0 ? 'active' : ''}"></div>`
-                ).join('');
-            }
+            countSpan.textContent = accessoriesDisplayed;
+            totalSpan.textContent = localAccessories.length;
 
-            document.getElementById('accessories-count').textContent = accessoriesDisplayed;
-            document.getElementById('accessories-total').textContent = accessoires.length;
-
-            const loadMoreBtn = document.getElementById('load-more-accessories');
-            if (accessoriesDisplayed >= accessoires.length) {
+            if (accessoriesDisplayed >= localAccessories.length) {
                 loadMoreBtn.style.display = 'none';
-                if (!document.querySelector('#accessories-load-more .end-of-products')) {
-                    loadMoreBtn.parentElement.innerHTML += '<div class="end-of-products">✨ Tous les accessoires sont affichés !</div>';
+                if (!container.querySelector('.end-of-products')) {
+                    const end = document.createElement('div');
+                    end.className = 'end-of-products';
+                    end.textContent = '✨ Tous les accessoires sont affichés !';
+                    container.appendChild(end);
                 }
             } else {
                 loadMoreBtn.style.display = 'inline-flex';
-                loadMoreBtn.innerHTML = `<i class="fas fa-plus-circle"></i> Charger plus d'accessoires (${Math.min(loadMoreCount, accessoires.length - accessoriesDisplayed)} autres)`;
+                loadMoreBtn.innerHTML = `<i class="fas fa-plus-circle"></i> Charger plus d'accessoires (${Math.min(LOAD_MORE_COUNT, localAccessories.length - accessoriesDisplayed)} autres)`;
             }
 
             setTimeout(() => {
-                document.querySelectorAll('#desktop-accessories .product-card, #mobile-accessories .product-card').forEach(card => {
-                    observer.observe(card);
-                });
-                document.querySelectorAll('.btn-view-details').forEach(btn => {
+                grid.querySelectorAll('.product-card').forEach(c => observer.observe(c));
+                grid.querySelectorAll('.btn-view-details').forEach(btn => {
                     btn.addEventListener('click', function() {
-                        const productData = JSON.parse(this.getAttribute('data-product').replace(/&#39;/g, "'"));
-                        showProductDetails(productData);
+                        const data = JSON.parse(this.dataset.product.replace(/&#39;/g, "'"));
+                        showProductDetails(data);
                     });
                 });
             }, 100);
-        }
-
-        function showEmptyMessage(containerId, message, isCarousel = false) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
-            container.innerHTML = `
-                <div class="empty-message">
-                    <i class="fas fa-box-open"></i>
-                    <h3>${message}</h3>
-                    <p>Aucun produit n'est disponible pour le moment.</p>
-                </div>
-            `;
-            if (isCarousel) {
-                const carousel = container.closest('.carousel-container');
-                if (carousel) {
-                    carousel.querySelector('.carousel-arrows')?.style.setProperty('display', 'none', 'important');
-                    carousel.querySelector('.scroll-indicators')?.style.setProperty('display', 'none', 'important');
-                }
-            }
-        }
-
-        // ===== CARROUSELS =====
-        function initializeCarousels() {
-            const isMobile = window.innerWidth <= 768;
-            if (isMobile) {
-                document.querySelectorAll('.carousel-container').forEach(c => c.style.display = 'block');
-                document.querySelectorAll('.product-grid').forEach(g => g.style.display = 'none');
-                setupCarouselArrows();
-            } else {
-                document.querySelectorAll('.carousel-container').forEach(c => c.style.display = 'none');
-                document.querySelectorAll('.product-grid').forEach(g => g.style.display = 'grid');
-            }
-        }
-
-        function setupCarouselArrows() {
-            document.querySelectorAll('.carousel-arrow').forEach(arrow => {
-                arrow.addEventListener('click', function() {
-                    const carouselType = this.getAttribute('data-carousel');
-                    const isPrev = this.classList.contains('prev');
-                    const carouselId = `mobile-${carouselType}`;
-                    const carousel = document.getElementById(carouselId);
-                    if (!carousel) return;
-                    const cardWidth = carousel.querySelector('.product-card')?.offsetWidth || 300;
-                    const scrollAmount = isPrev ? -cardWidth : cardWidth;
-                    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                    setTimeout(() => updateCarouselIndicators(carouselType), 300);
-                });
-            });
-        }
-
-        function updateCarouselIndicators(carouselType) {
-            const carousel = document.getElementById(`mobile-${carouselType}`);
-            const indicators = document.querySelectorAll(`#${carouselType}-indicators .scroll-indicator`);
-            if (!carousel || !indicators.length) return;
-            const scrollPosition = carousel.scrollLeft;
-            const cardWidth = carousel.querySelector('.product-card')?.offsetWidth || 300;
-            const activeIndex = Math.round(scrollPosition / (cardWidth + 20));
-            indicators.forEach((ind, idx) => ind.classList.toggle('active', idx === activeIndex));
         }
 
         // ===== LOAD MORE =====
@@ -1719,7 +1500,7 @@
 
             setTimeout(() => {
                 const remaining = localWatches.length - watchesDisplayed;
-                const toLoad = Math.min(loadMoreCount, remaining);
+                const toLoad = Math.min(LOAD_MORE_COUNT, remaining);
                 if (remaining > 0) {
                     watchesDisplayed += toLoad;
                     displayWatches();
@@ -1728,14 +1509,14 @@
                 } else {
                     hasReachedEndWatches = true;
                     spinner.remove();
-                    const endMsg = document.createElement('div');
-                    endMsg.className = 'end-of-products';
-                    endMsg.textContent = '✨ Toutes les montres sont affichées !';
-                    document.getElementById('watches-load-more').appendChild(endMsg);
+                    const end = document.createElement('div');
+                    end.className = 'end-of-products';
+                    end.textContent = '✨ Toutes les montres sont affichées !';
+                    document.getElementById('watches-load-more').appendChild(end);
                     document.getElementById('load-more-watches').style.display = 'none';
                 }
                 isLoadingWatches = false;
-            }, 800);
+            }, 600);
         }
 
         function loadMoreAccessories() {
@@ -1748,7 +1529,7 @@
 
             setTimeout(() => {
                 const remaining = localAccessories.length - accessoriesDisplayed;
-                const toLoad = Math.min(loadMoreCount, remaining);
+                const toLoad = Math.min(LOAD_MORE_COUNT, remaining);
                 if (remaining > 0) {
                     accessoriesDisplayed += toLoad;
                     displayAccessories();
@@ -1757,14 +1538,14 @@
                 } else {
                     hasReachedEndAccessories = true;
                     spinner.remove();
-                    const endMsg = document.createElement('div');
-                    endMsg.className = 'end-of-products';
-                    endMsg.textContent = '✨ Tous les accessoires sont affichés !';
-                    document.getElementById('accessories-load-more').appendChild(endMsg);
+                    const end = document.createElement('div');
+                    end.className = 'end-of-products';
+                    end.textContent = '✨ Tous les accessoires sont affichés !';
+                    document.getElementById('accessories-load-more').appendChild(end);
                     document.getElementById('load-more-accessories').style.display = 'none';
                 }
                 isLoadingAccessories = false;
-            }, 800);
+            }, 600);
         }
 
         // ===== MODAL =====
@@ -1842,6 +1623,8 @@
                 .modal-actions { margin-top: 30px; }
                 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
                 @keyframes slideUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+                @keyframes slideInRight { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
+                @keyframes slideOutRight { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(50px); } }
             `;
             document.head.appendChild(modalStyle);
 
@@ -1855,9 +1638,9 @@
         // ===== CHECK MOBILE MENU =====
         function checkMobileMenu() {
             const isMobile = window.innerWidth <= 768;
-            const navLinks = document.querySelector('.nav-links');
-            if (isMobile && navLinks) {
-                navLinks.querySelectorAll('li').forEach(li => {
+            const nav = document.querySelector('.nav-links');
+            if (isMobile && nav) {
+                nav.querySelectorAll('li').forEach(li => {
                     li.style.display = 'block';
                     li.style.opacity = '1';
                     li.style.visibility = 'visible';
@@ -1869,20 +1652,19 @@
         // ===== INITIALISATION =====
         document.addEventListener('DOMContentLoaded', () => {
             console.log("=== Elite Smart - Version 100% locale ===");
-            console.log(`📁 ${localWatches.length} montres chargées`);
-            console.log(`📁 ${localAccessories.length} accessoires chargés`);
+            console.log(`📁 ${localWatches.length} montres, ${localAccessories.length} accessoires`);
 
             checkMobileMenu();
 
             document.querySelectorAll('.section').forEach(s => observer.observe(s));
             document.querySelectorAll('.why-card').forEach(c => observer.observe(c));
 
-            watchesDisplayed = Math.min(initialWatchesToShow, localWatches.length);
-            accessoriesDisplayed = Math.min(initialAccessoriesToShow, localAccessories.length);
+            // Nombre initial
+            watchesDisplayed = Math.min(INITIAL_WATCHES, localWatches.length);
+            accessoriesDisplayed = Math.min(INITIAL_ACCESSORIES, localAccessories.length);
 
             displayWatches();
             displayAccessories();
-            initializeCarousels();
 
             document.getElementById('load-more-watches')?.addEventListener('click', loadMoreWatches);
             document.getElementById('load-more-accessories')?.addEventListener('click', loadMoreAccessories);
@@ -1891,19 +1673,16 @@
                 document.querySelectorAll('.product-card').forEach(c => observer.observe(c));
                 document.querySelectorAll('.btn-view-details').forEach(btn => {
                     btn.addEventListener('click', function() {
-                        const productData = JSON.parse(this.getAttribute('data-product').replace(/&#39;/g, "'"));
-                        showProductDetails(productData);
+                        const data = JSON.parse(this.dataset.product.replace(/&#39;/g, "'"));
+                        showProductDetails(data);
                     });
                 });
-            }, 500);
+            }, 300);
 
             console.log("✅ Site prêt !");
         });
 
-        window.addEventListener('resize', () => {
-            checkMobileMenu();
-            initializeCarousels();
-        });
+        window.addEventListener('resize', checkMobileMenu);
     </script>
 </body>
 </html>
