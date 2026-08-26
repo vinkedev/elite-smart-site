@@ -171,6 +171,72 @@
             from { opacity: 0; transform: translateX(-50px); }
             to { opacity: 1; transform: translateX(0); }
         }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes fadeOut {
+            from { opacity: 1; visibility: visible; }
+            to { opacity: 0; visibility: hidden; }
+        }
+
+        /* ===== LOADER CIRCULAIRE ===== */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--light);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+            gap: 20px;
+        }
+        .page-loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .loader-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 5px solid rgba(0, 71, 171, 0.1);
+            border-top: 5px solid var(--primary);
+            border-right: 5px solid var(--secondary);
+            animation: spin 0.9s cubic-bezier(0.6, 0.2, 0.4, 0.8) infinite;
+            position: relative;
+        }
+        .loader-circle::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 107, 53, 0.15);
+            border-bottom: 3px solid var(--secondary);
+            animation: spin 0.6s linear infinite reverse;
+        }
+        .loader-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+            letter-spacing: 2px;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        .loader-text span.elite { color: var(--primary); }
+        .loader-text span.smart { color: var(--secondary); }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.02); }
+        }
 
         /* ===== HEADER ===== */
         .main-header {
@@ -341,10 +407,9 @@
             height: 100%;
             border: 1px solid rgba(0,0,0,0.03);
         }
-        /* ✅ ICI on rend les cartes VISIBLES par défaut */
-        .product-card {
+        .product-card.visible {
             opacity: 1 !important;
-            transform: none !important;
+            transform: translateY(0) !important;
         }
         .product-card:hover {
             transform: translateY(-12px) scale(1.01);
@@ -891,6 +956,14 @@
     </style>
 </head>
 <body>
+    <!-- ===== LOADER CIRCULAIRE ===== -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-circle"></div>
+        <div class="loader-text">
+            <span class="elite">Elite</span> <span class="smart">Smart</span>
+        </div>
+    </div>
+
     <!-- HEADER -->
     <header class="main-header">
         <div class="container header-container">
@@ -1071,6 +1144,14 @@
     <a href="https://wa.me/22676707008" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <script>
+        // ===== CACHER LE LOADER APRÈS CHARGEMENT =====
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('pageLoader');
+            setTimeout(function() {
+                loader.classList.add('hidden');
+            }, 800); // 800ms pour un effet fluide et visible
+        });
+
         // ===== DONNÉES PRODUITS =====
         const localWatches = [
             { id: 1, name: "Montre Elite 1", price: "15.000 FCFA", description: "Montre connectée haut de gamme avec écran AMOLED", category: "MONTRE CONNECTÉE", image: "Elitesmart/montre1.jpg", badge: "new", badgeText: "NOUVEAU", detail: "Écran AMOLED 1.78\", GPS intégré, moniteur de fréquence cardiaque, résistance à l'eau 5ATM, autonomie 7 jours" },
@@ -1259,7 +1340,6 @@
             );
             const whatsappLink = `https://wa.me/22676707008?text=${whatsappMsg}`;
 
-            // ✅ ICI on ajoute la classe "visible" directement
             return `
                 <div class="product-card visible">
                     ${product.badge ? `<div class="badge ${badgeClass}">${product.badgeText}</div>` : ''}
@@ -1292,7 +1372,7 @@
             watchesGrid.innerHTML = localWatches.map(p => generateProductCard(p)).join('');
             accessoriesGrid.innerHTML = localAccessories.map(p => generateProductCard(p)).join('');
 
-            // ✅ On force aussi l'affichage des sections
+            // ✅ Forcer l'affichage des sections
             document.querySelectorAll('.section').forEach(section => {
                 section.classList.add('visible');
             });
@@ -1392,19 +1472,9 @@
         }
 
         // ===== INIT =====
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', function() {
             renderProducts();
-            console.log('✅ Elite Smart - Tous les produits affichés directement.');
-        });
-
-        // Gérer le redimensionnement pour le menu mobile
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                navLinks.classList.remove('active');
-                const icon = mobileMenuBtn.querySelector('i');
-                icon.classList.add('fa-bars');
-                icon.classList.remove('fa-times');
-            }
+            console.log('✅ Elite Smart - Site chargé avec succès !');
         });
     </script>
 </body>
