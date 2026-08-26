@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* ===== VARIABLES (inchangé) ===== */
+        /* ===== VARIABLES ===== */
         :root {
             --primary: #0047AB;
             --primary-dark: #003788;
@@ -168,38 +168,6 @@
             from { opacity: 0; transform: translateX(-50px); }
             to { opacity: 1; transform: translateX(0); }
         }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* ===== PAGINATION INFINIE (défilement) ===== */
-        .load-more-container {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(0,0,0,0.1);
-            position: relative;
-            min-height: 80px;
-        }
-        .loading-spinner {
-            display: none;
-            width: 40px;
-            height: 40px;
-            margin: 20px auto;
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid var(--secondary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        .end-of-products {
-            text-align: center;
-            padding: 20px;
-            color: var(--gray);
-            font-style: italic;
-            border-top: 1px solid rgba(0,0,0,0.1);
-            margin-top: 20px;
-        }
 
         /* ===== HEADER ===== */
         .main-header {
@@ -288,7 +256,7 @@
             color: var(--primary);
         }
 
-        /* ===== HERO SECTION ===== */
+        /* ===== HERO ===== */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
                         url('https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
@@ -382,12 +350,18 @@
             opacity: 1;
             transform: translateY(0);
         }
-        .product-card:nth-child(1) { transition-delay: 0.1s; }
-        .product-card:nth-child(2) { transition-delay: 0.2s; }
-        .product-card:nth-child(3) { transition-delay: 0.3s; }
-        .product-card:nth-child(4) { transition-delay: 0.4s; }
-        .product-card:nth-child(5) { transition-delay: 0.5s; }
-        .product-card:nth-child(6) { transition-delay: 0.6s; }
+        .product-card:nth-child(1) { transition-delay: 0.05s; }
+        .product-card:nth-child(2) { transition-delay: 0.1s; }
+        .product-card:nth-child(3) { transition-delay: 0.15s; }
+        .product-card:nth-child(4) { transition-delay: 0.2s; }
+        .product-card:nth-child(5) { transition-delay: 0.25s; }
+        .product-card:nth-child(6) { transition-delay: 0.3s; }
+        .product-card:nth-child(7) { transition-delay: 0.35s; }
+        .product-card:nth-child(8) { transition-delay: 0.4s; }
+        .product-card:nth-child(9) { transition-delay: 0.45s; }
+        .product-card:nth-child(10) { transition-delay: 0.5s; }
+        .product-card:nth-child(11) { transition-delay: 0.55s; }
+        .product-card:nth-child(12) { transition-delay: 0.6s; }
         .product-card:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: var(--shadow-hover);
@@ -450,6 +424,15 @@
             grid-template-columns: 1fr 1fr;
             gap: 10px;
             margin-top: 12px;
+        }
+        .product-actions .btn {
+            padding: 10px 12px !important;
+            font-size: 13px !important;
+            gap: 6px !important;
+            border-radius: 20px !important;
+        }
+        .product-actions .btn i {
+            font-size: 13px !important;
         }
 
         /* ===== POURQUOI NOUS ===== */
@@ -715,18 +698,6 @@
             animation: none;
         }
 
-        /* ===== MESSAGES VIDES ===== */
-        .empty-message {
-            text-align: center;
-            padding: 60px 20px;
-            color: var(--gray);
-            font-size: 1.2rem;
-            background: rgba(255,255,255,0.5);
-            border-radius: var(--radius);
-            grid-column: 1 / -1;
-        }
-        .empty-message i { font-size: 50px; margin-bottom: 20px; color: var(--primary); opacity: 0.5; }
-
         /* ===== MODAL ===== */
         .product-detail {
             background: #f8f9fa;
@@ -768,7 +739,6 @@
             #typing { font-size: 1.5rem; }
         }
         @media (max-width: 768px) {
-            /* ---- CORRECTIFS MENU & BOUTONS ---- */
             .header-container {
                 justify-content: space-between;
                 align-items: center;
@@ -808,17 +778,11 @@
                 bottom: 20px !important;
                 right: 20px !important;
             }
-            .load-more-container .btn {
-                width: 100%;
-                max-width: 280px;
-                padding: 12px 16px !important;
-            }
             .contact-form .btn {
                 padding: 14px !important;
                 font-size: 14px !important;
             }
 
-            /* ---- STYLES EXISTANTS CONSERVÉS ---- */
             .nav-links {
                 position: fixed;
                 top: 80px;
@@ -932,7 +896,6 @@
                 top: 8px !important;
                 left: 8px !important;
             }
-            .load-more-container { display: block !important; }
         }
         @media (max-width: 480px) {
             .hero h1 { font-size: 1.6rem !important; }
@@ -996,15 +959,7 @@
                 <h2>Montres Connectées</h2>
                 <p>Découvrez nos best-sellers du moment</p>
             </div>
-
-            <!-- Grille de montres -->
             <div class="product-grid" id="desktop-watches"></div>
-
-            <!-- Zone de chargement infini pour les montres -->
-            <div class="load-more-container" id="watches-load-more">
-                <div class="loading-spinner" id="watches-spinner"></div>
-                <div id="watches-end" class="end-of-products" style="display:none;">✨ Toutes les montres sont affichées !</div>
-            </div>
         </div>
     </section>
 
@@ -1047,15 +1002,7 @@
                 <h2>Accessoires & Autres Produits</h2>
                 <p>Complétez votre expérience avec nos accessoires high-tech</p>
             </div>
-
-            <!-- Grille d'accessoires -->
             <div class="product-grid" id="desktop-accessories"></div>
-
-            <!-- Zone de chargement infini pour les accessoires -->
-            <div class="load-more-container" id="accessories-load-more">
-                <div class="loading-spinner" id="accessories-spinner"></div>
-                <div id="accessories-end" class="end-of-products" style="display:none;">✨ Tous les accessoires sont affichés !</div>
-            </div>
         </div>
     </section>
 
@@ -1085,7 +1032,7 @@
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"Livraison ultra rapide à  Ouagadougou. Le téléphone est exactement comme décrit. Le support m'a bien aidé pour la configuration."</p>
+                        <p>"Livraison ultra rapide à Ouagadougou. Le téléphone est exactement comme décrit. Le support m'a bien aidé pour la configuration."</p>
                     </div>
                     <div class="client-info">
                         <div class="client-avatar">FS</div>
@@ -1230,7 +1177,7 @@
 
     <!-- ===== JAVASCRIPT ===== -->
     <script>
-        // ===== PRODUITS =====
+        // ===== PRODUITS (tous) =====
         const localWatches = [
             { id: 1, name: "Montre Elite 1", price: "15.000 FCFA", description: "Montre connectée haut de gamme avec écran AMOLED", category: "MONTRE CONNECTÉE", image: "Elitesmart/montre1.jpg", badge: "new", badgeText: "NOUVEAU", detail: "Écran AMOLED 1.78\", GPS intégré, moniteur de fréquence cardiaque, résistance à l'eau 5ATM, autonomie 7 jours" },
             { id: 2, name: "Montre Elite 2", price: "16.500 FCFA", description: "Montre sportive avec GPS et suivi d'activités", category: "MONTRE SPORT", image: "Elitesmart/montre2.jpg", badge: "hot", badgeText: "BEST SELLER", detail: "GPS intégré, 20 modes sport, résistance à l'eau, écran tactile" },
@@ -1276,18 +1223,6 @@
             { id: "a10", name: "Accessoire Elite 10", price: "6.800 FCFA", description: "Accessoire polyvalent", category: "ACCESSOIRE", image: "Elitesmart/Accessoire10.jpg", badge: "new", badgeText: "NOUVEAU", detail: "Polyvalent, adaptable, qualité certifiée" },
             { id: "a11", name: "Accessoire Elite 11", price: "7.800 FCFA", description: "Accessoire design scandinave", category: "ACCESSOIRE", image: "Elitesmart/Accessoire11.jpg", badge: "promo", badgeText: "PROMO", detail: "Design scandinave, minimaliste, écologique" }
         ];
-
-        // ===== CONFIGURATION =====
-        const INITIAL_WATCHES = 11;
-        const INITIAL_ACCESSORIES = 3;
-        const LOAD_MORE_COUNT = 6;
-
-        let watchesDisplayed = 0;
-        let accessoriesDisplayed = 0;
-        let isLoadingWatches = false;
-        let isLoadingAccessories = false;
-        let hasReachedEndWatches = false;
-        let hasReachedEndAccessories = false;
 
         // ===== EFFET MACHINE À ÉCRIRE =====
         const texts = [
@@ -1394,7 +1329,7 @@
             }, 3000);
         }
 
-        // ===== GÉNÉRATION CARTE =====
+        // ===== GÉNÉRATION CARTE (avec lazy loading) =====
         function generateProductCard(product) {
             const badgeClass = `badge-${product.badge || 'hot'}`;
             const whatsappMessage = encodeURIComponent(
@@ -1413,7 +1348,8 @@
                 <div class="product-card">
                     ${product.badge ? `<div class="badge ${badgeClass}">${product.badgeText || product.badge}</div>` : ''}
                     <div class="product-image">
-                        <img src="${product.image}" alt="${product.name}" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x300/0047AB/FFFFFF?text=Elite+Smart'">
+                        <img src="${product.image}" alt="${product.name}" loading="lazy" 
+                             onerror="this.onerror=null; this.src='https://via.placeholder.com/300x300/0047AB/FFFFFF?text=Elite+Smart'">
                     </div>
                     <div class="product-content">
                         <span class="product-category">${product.category || 'PRODUIT'}</span>
@@ -1434,129 +1370,26 @@
             `;
         }
 
-        // ===== AFFICHAGE DES PRODUITS =====
-        function displayWatches() {
-            const grid = document.getElementById('desktop-watches');
-            const toShow = localWatches.slice(0, watchesDisplayed);
-            grid.innerHTML = toShow.map(p => generateProductCard(p)).join('');
+        // ===== AFFICHAGE DE TOUS LES PRODUITS =====
+        function displayAllProducts() {
+            // Montres
+            const watchesGrid = document.getElementById('desktop-watches');
+            watchesGrid.innerHTML = localWatches.map(p => generateProductCard(p)).join('');
 
-            // Observer et événements
-            setTimeout(() => {
-                grid.querySelectorAll('.product-card').forEach(c => observer.observe(c));
-                grid.querySelectorAll('.btn-view-details').forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        const data = JSON.parse(this.dataset.product.replace(/&#39;/g, "'"));
-                        showProductDetails(data);
-                    });
+            // Accessoires
+            const accGrid = document.getElementById('desktop-accessories');
+            accGrid.innerHTML = localAccessories.map(p => generateProductCard(p)).join('');
+
+            // Observer pour l'animation d'apparition
+            document.querySelectorAll('.product-card').forEach(c => observer.observe(c));
+
+            // Événements sur les boutons "Détails"
+            document.querySelectorAll('.btn-view-details').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const data = JSON.parse(this.dataset.product.replace(/&#39;/g, "'"));
+                    showProductDetails(data);
                 });
-            }, 100);
-
-            // Gérer l'affichage du spinner et du message "fin"
-            const spinner = document.getElementById('watches-spinner');
-            const endMsg = document.getElementById('watches-end');
-            if (watchesDisplayed >= localWatches.length) {
-                spinner.style.display = 'none';
-                endMsg.style.display = 'block';
-            } else {
-                spinner.style.display = 'none';
-                endMsg.style.display = 'none';
-            }
-        }
-
-        function displayAccessories() {
-            const grid = document.getElementById('desktop-accessories');
-            const toShow = localAccessories.slice(0, accessoriesDisplayed);
-            grid.innerHTML = toShow.map(p => generateProductCard(p)).join('');
-
-            setTimeout(() => {
-                grid.querySelectorAll('.product-card').forEach(c => observer.observe(c));
-                grid.querySelectorAll('.btn-view-details').forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        const data = JSON.parse(this.dataset.product.replace(/&#39;/g, "'"));
-                        showProductDetails(data);
-                    });
-                });
-            }, 100);
-
-            const spinner = document.getElementById('accessories-spinner');
-            const endMsg = document.getElementById('accessories-end');
-            if (accessoriesDisplayed >= localAccessories.length) {
-                spinner.style.display = 'none';
-                endMsg.style.display = 'block';
-            } else {
-                spinner.style.display = 'none';
-                endMsg.style.display = 'none';
-            }
-        }
-
-        // ===== CHARGEMENT INFINI (Infinite Scroll) =====
-        function loadMoreWatches() {
-            if (isLoadingWatches || hasReachedEndWatches) return;
-            isLoadingWatches = true;
-            const spinner = document.getElementById('watches-spinner');
-            spinner.style.display = 'block';
-
-            setTimeout(() => {
-                const remaining = localWatches.length - watchesDisplayed;
-                const toLoad = Math.min(LOAD_MORE_COUNT, remaining);
-                if (remaining > 0) {
-                    watchesDisplayed += toLoad;
-                    displayWatches();
-                    showNotification(`${toLoad} nouvelles montres chargées !`);
-                } else {
-                    hasReachedEndWatches = true;
-                    displayWatches(); // pour afficher le message "fin"
-                }
-                spinner.style.display = 'none';
-                isLoadingWatches = false;
-            }, 500);
-        }
-
-        function loadMoreAccessories() {
-            if (isLoadingAccessories || hasReachedEndAccessories) return;
-            isLoadingAccessories = true;
-            const spinner = document.getElementById('accessories-spinner');
-            spinner.style.display = 'block';
-
-            setTimeout(() => {
-                const remaining = localAccessories.length - accessoriesDisplayed;
-                const toLoad = Math.min(LOAD_MORE_COUNT, remaining);
-                if (remaining > 0) {
-                    accessoriesDisplayed += toLoad;
-                    displayAccessories();
-                    showNotification(`${toLoad} nouveaux accessoires chargés !`);
-                } else {
-                    hasReachedEndAccessories = true;
-                    displayAccessories();
-                }
-                spinner.style.display = 'none';
-                isLoadingAccessories = false;
-            }, 500);
-        }
-
-        // ===== DÉTECTION DU SCROLL POUR CHARGER =====
-        function setupInfiniteScroll() {
-            const watchesContainer = document.getElementById('watches-load-more');
-            const accessoriesContainer = document.getElementById('accessories-load-more');
-
-            const watchesObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !isLoadingWatches && !hasReachedEndWatches) {
-                        loadMoreWatches();
-                    }
-                });
-            }, { root: null, rootMargin: '0px 0px 100px 0px', threshold: 0.1 });
-
-            const accessoriesObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !isLoadingAccessories && !hasReachedEndAccessories) {
-                        loadMoreAccessories();
-                    }
-                });
-            }, { root: null, rootMargin: '0px 0px 100px 0px', threshold: 0.1 });
-
-            if (watchesContainer) watchesObserver.observe(watchesContainer);
-            if (accessoriesContainer) accessoriesObserver.observe(accessoriesContainer);
+            });
         }
 
         // ===== MODAL =====
@@ -1662,7 +1495,7 @@
 
         // ===== INITIALISATION =====
         document.addEventListener('DOMContentLoaded', () => {
-            console.log("=== Elite Smart - Infinite Scroll ===");
+            console.log("=== Elite Smart - Tous les produits avec lazy loading ===");
             console.log(`📁 ${localWatches.length} montres, ${localAccessories.length} accessoires`);
 
             checkMobileMenu();
@@ -1670,15 +1503,8 @@
             document.querySelectorAll('.section').forEach(s => observer.observe(s));
             document.querySelectorAll('.why-card').forEach(c => observer.observe(c));
 
-            // Chargement initial (rapide)
-            watchesDisplayed = Math.min(INITIAL_WATCHES, localWatches.length);
-            accessoriesDisplayed = Math.min(INITIAL_ACCESSORIES, localAccessories.length);
-
-            displayWatches();
-            displayAccessories();
-
-            // Mettre en place l'infinite scroll
-            setupInfiniteScroll();
+            // Afficher tous les produits immédiatement
+            displayAllProducts();
 
             console.log("✅ Site prêt !");
         });
