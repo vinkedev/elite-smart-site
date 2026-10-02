@@ -729,6 +729,33 @@
             font-size: 14px;
         }
 
+        /* ===== CRÉDIT MAHMARGROUP ===== */
+        .footer-credit {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 0.02em;
+        }
+        .footer-credit a {
+            color: var(--secondary);
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+        .footer-credit a::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; bottom: -2px;
+            height: 1.5px;
+            background: var(--secondary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .footer-credit a:hover { color: var(--secondary-light); }
+        .footer-credit a:hover::after { transform: scaleX(1); background: var(--secondary-light); }
+
         /* ===== WHATSAPP FLOAT ===== */
         .whatsapp-float {
             position: fixed;
@@ -1135,7 +1162,8 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2026 Elite Smart. Tous droits réservés. | Site créé par Kevin Zongo 🇧🇫</p>
+                <p>&copy; 2026 Elite Smart. Tous droits réservés.</p>
+                <p class="footer-credit">Conçu par <a href="#" target="_blank" rel="noopener">MahmarGroup</a></p>
             </div>
         </div>
     </footer>
